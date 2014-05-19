@@ -1,0 +1,65 @@
+safe: True
+port: 4000
+base-url:    /
+
+gems:
+  - jekyll-sitemap
+
+
+future:      true
+lsi:         false
+highlighter: true
+markdown:    kramdown
+permalink:   blog/:title
+
+rdiscount:
+  extensions: []
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: false
+  input: GFM
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+collections:
+  projects:
+    label: projects
+    output: true
+    relative_directory: :slug
+    directory: :slug
+
+exclude: [
+    CNAME,
+    README.md,
+    Gemfile,
+    Gemfile.lock,
+    Procfile,
+    gruntfile.js,
+    package.json,
+    composer.json,
+    node_modules,
+    grunt,
+    validation-status.json,
+    validation-report.json,
+    config.ru
+]
+
+# Custom vars
+current_version:  2.0.1
+repo: https://github.com/underlost/underlost.net
+site: http://underlost.net/
+author: Tyler Rilling
+
+blog: /blog/
+blog_title: underlost.net
+blog_deck: By Tyler Rilling
