@@ -10,7 +10,7 @@ future:      true
 lsi:         false
 highlighter: true
 markdown:    kramdown
-permalink:   blog/:title
+permalink:   :title
 
 rdiscount:
   extensions: []
@@ -31,12 +31,6 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: style
 
-collections:
-  projects:
-    label: projects
-    output: true
-    relative_directory: :slug
-    directory: :slug
 
 exclude: [
     CNAME,
@@ -55,11 +49,7 @@ exclude: [
 ]
 
 # Custom vars
-current_version:  2.0.1
-repo: https://github.com/underlost/underlost.net
-site: http://underlost.net/
+current_version:  0.0.1
+repo: https://github.com/underlost/underlost.github.io
+site: http://tyler.codes/
 author: Tyler Rilling
-
-blog: /blog/
-blog_title: underlost.net
-blog_deck: By Tyler Rilling
