@@ -353,7 +353,7 @@ html
 }
 body
 {
-    font-family: 'jaf-bernino-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 1.42857143;
 
@@ -2940,8 +2940,6 @@ address
 {
     content: '\f1e2';
 }
-/* Structure & Background
------------------------------ */
 .wrapper
 {
     font-family: 'proxima-nova', Helvetica, sans-serif;
@@ -3026,8 +3024,6 @@ address
 
     margin: -50% 0 0 -50%;
 }
-/* Type
------------------------------ */
 .preamble
 {
     font-size: 14px;
@@ -3038,6 +3034,10 @@ address
 
     letter-spacing: .01em;
 
+    color: #d1cdbf;
+}
+.preamble a
+{
     color: #d1cdbf;
 }
 .tagline
@@ -3055,8 +3055,14 @@ address
 {
     display: block;
 }
-/* Social Links
------------------------------ */
+.tagline .line a
+{
+    color: #f2f2f2;
+}
+.tagline .line a:hover
+{
+    text-decoration: none;
+}
 .social-links
 {
     left: 12.1%;
@@ -3067,23 +3073,19 @@ address
 
     list-style-type: none;
 }
-.social-links > li
-{
-    display: inline-block;
-}
-.social-link-item
+.social-links .social-link-item
 {
     display: inline-block;
 
-    padding: 0 10px 0 0;
+    padding: 0 10px 10px 0;
 
     -webkit-transition: opacity .1s ease-in;
 
     opacity: .95;
     color: #f2f2f2;
 }
-.social-link-item:hover,
-.social-link-item:focus
+.social-links .social-link-item:hover,
+.social-links .social-link-item:focus
 {
     opacity: .5;
     color: #f2f2f2;
@@ -3113,10 +3115,6 @@ address
     .tagline
     {
         font-size: 32px;
-    }
-    .social-link-item
-    {
-        margin-left: 20px;
     }
 }
 /*# sourceMappingURL=underlost.css.map */
