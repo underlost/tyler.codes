@@ -10,12 +10,7 @@
 	<link rel="canonical" href="http://tyler.codes{{ page.url | replace:'index.html','' }}" />
     <link type="text/plain" rel="author" href="/humans.txt" />
 	<link href="/dist/css/underlost.min.css" rel="stylesheet">
-
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<link rel="shortcut icon" href="/dist/ico/favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
 
 	<script type="text/javascript" src="//use.typekit.net/qvg2llb.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -32,14 +27,12 @@
 </head>
 
 <body>
-
+	<div class="particles-wrap"><div id="particles-js"></div></div>
 	<div class="wrapper">
 		{{ content }}
 	</div>
-
-	<!-- Le javascript -->
+	<div id="background-wrapper"></div>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/dist/js/underlost.min.js"></script>
-
 </body>
 </html>

@@ -1,7 +1,6 @@
 /*!
- * underlost.codes v2.0.1 (http://underlost.net)
- * Copyright 2014 Tyler Rilling
- * Licensed under MIT (https://github.com/underlost/underlost.net/blob/master/LICENSE)
+ * underlost.net v3.0.1 (http://tyler.codes)
+ * Copyright 2015 Tyler Rilling (http://underlost.net/)
  */
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -121,7 +120,6 @@ figure
 hr
 {
     -webkit-box-sizing: content-box;
-       -moz-box-sizing: content-box;
             box-sizing: content-box;
     height: 0;
 }
@@ -187,7 +185,6 @@ input[type='checkbox'],
 input[type='radio']
 {
     -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
             box-sizing: border-box;
     padding: 0;
 }
@@ -199,7 +196,6 @@ input[type='number']::-webkit-outer-spin-button
 input[type='search']
 {
     -webkit-box-sizing: content-box;
-       -moz-box-sizing: content-box;
             box-sizing: content-box;
 
     -webkit-appearance: textfield;
@@ -251,7 +247,7 @@ th
         text-shadow: none !important;
     }
     a,
-  a:visited
+    a:visited
     {
         text-decoration: underline;
     }
@@ -264,12 +260,12 @@ th
         content: ' (' attr(title) ')';
     }
     a[href^='javascript:']:after,
-  a[href^='#']:after
+    a[href^='#']:after
     {
         content: '';
     }
     pre,
-  blockquote
+    blockquote
     {
         border: 1px solid #999;
 
@@ -280,7 +276,7 @@ th
         display: table-header-group;
     }
     tr,
-  img
+    img
     {
         page-break-inside: avoid;
     }
@@ -289,14 +285,14 @@ th
         max-width: 100% !important;
     }
     p,
-  h2,
-  h3
+    h2,
+    h3
     {
         orphans: 3;
         widows: 3;
     }
     h2,
-  h3
+    h3
     {
         page-break-after: avoid;
     }
@@ -309,12 +305,12 @@ th
         display: none;
     }
     .table td,
-  .table th
+    .table th
     {
         background-color: #fff !important;
     }
     .btn > .caret,
-  .dropup > .btn > .caret
+    .dropup > .btn > .caret
     {
         border-top-color: #000 !important;
     }
@@ -327,7 +323,7 @@ th
         border-collapse: collapse !important;
     }
     .table-bordered th,
-  .table-bordered td
+    .table-bordered td
     {
         border: 1px solid #ddd !important;
     }
@@ -335,14 +331,12 @@ th
 *
 {
     -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
 *:before,
 *:after
 {
     -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
 html
@@ -358,7 +352,7 @@ body
     line-height: 1.42857143;
 
     color: #333;
-    background-color: #919799;
+    background-color: #1a1a1a;
 }
 input,
 button,
@@ -423,7 +417,7 @@ img
 
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #919799;
+    background-color: #1a1a1a;
 }
 .img-circle
 {
@@ -897,7 +891,8 @@ address
  */
 /* FONT PATH
  * -------------------------- */
-@font-face {
+@font-face
+{
     font-family: 'FontAwesome';
     font-weight: normal;
     font-style: normal;
@@ -1045,7 +1040,7 @@ address
          -o-transform: rotate(90deg);
             transform: rotate(90deg);
 
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 .fa-rotate-180
 {
@@ -1054,7 +1049,7 @@ address
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
 
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 }
 .fa-rotate-270
 {
@@ -1063,7 +1058,7 @@ address
          -o-transform: rotate(270deg);
             transform: rotate(270deg);
 
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 .fa-flip-horizontal
 {
@@ -1072,7 +1067,7 @@ address
          -o-transform: scale(-1, 1);
             transform: scale(-1, 1);
 
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
 }
 .fa-flip-vertical
 {
@@ -1081,7 +1076,7 @@ address
          -o-transform: scale(1, -1);
             transform: scale(1, -1);
 
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
 }
 .fa-stack
 {
@@ -2981,7 +2976,7 @@ address
 .wrapper-inner
 {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     left: 12%;
 
     display: inline-block;
@@ -3090,6 +3085,30 @@ address
     opacity: .5;
     color: #f2f2f2;
     outline: none;
+}
+#particles-js
+{
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: all 900ms ease;
+         -o-transition: all 900ms ease;
+            transition: all 900ms ease;
+}
+#particles-js canvas
+{
+    display: block;
+
+    vertical-align: bottom;
 }
 @media (max-width: 800px)
 {

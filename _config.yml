@@ -1,16 +1,19 @@
 safe: True
-port: 4000
+port: 4002
 base-url:    /
 
 gems:
   - jekyll-sitemap
 
+source:      ./source/site
+destination: ./_site
+plugins:     ./source/site/_plugins
 
 future:      true
 lsi:         false
 highlighter: true
 markdown:    kramdown
-permalink:   :title
+permalink:   blog/:title
 
 rdiscount:
   extensions: []
@@ -35,21 +38,10 @@ kramdown:
 exclude: [
     CNAME,
     README.md,
-    Gemfile,
-    Gemfile.lock,
-    Procfile,
-    gruntfile.js,
-    package.json,
-    composer.json,
-    node_modules,
-    grunt,
-    validation-status.json,
-    validation-report.json,
-    config.ru
 ]
 
 # Custom vars
-current_version:  0.0.1
+current_version:  0.2.1
 repo: https://github.com/underlost/underlost.github.io
 site: http://tyler.codes/
 author: Tyler Rilling

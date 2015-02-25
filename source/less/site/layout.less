@@ -31,7 +31,7 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    z-index: 2;
+    z-index: 5;
     margin-top: 5%;
     max-width: 75%;
     left: 12%;
@@ -62,10 +62,7 @@
         margin:-50% 0 0 -50%;
         display:block;
     }
-
-
 }
-
 
 .preamble {
     font-size: 14px;
@@ -113,5 +110,21 @@
         opacity: .5;
         color: #f2f2f2;
         outline: none;
+    }
+}
+
+#particles-js{
+    position: absolute;
+    z-index: 3;
+    overflow: hidden;
+    top:0; bottom: 0;
+    left:0; right: 0;
+    height:100%;
+    width:100%;
+    transition:all 900ms ease;
+
+    canvas{
+        display: block;
+        vertical-align:bottom;
     }
 }

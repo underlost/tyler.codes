@@ -1,8 +1,7 @@
 /*!
- * Underlost.net's Gruntfile
- * http://underlost.net
- * Copyright 2014 Tyler Rilling
- * Licensed under MIT (https://github.com/underlost/underlost.net/blob/master/LICENSE)
+ * UnderTasker
+ * Copyright 2014 Tyler Rilling, some parts loosely based off of Bootstrap
+ * Licensed under MIT (https://github.com/underlost/Undertasker/blob/master/LICENSE)
  */
 
 module.exports = function (grunt) {
@@ -17,7 +16,6 @@ module.exports = function (grunt) {
 
   var fs = require('fs');
   var path = require('path');
-  var updateShrinkwrap = require('./grunt/shrinkwrap.js');
 
   // Project configuration.
   grunt.initConfig({
@@ -25,20 +23,28 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*!\n' +
-            ' * underlost.codes v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
+            ' * underlost.net v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
-            ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
             ' */\n',
-    jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'underlost\\\'s JavaScript requires jQuery\') }\n\n',
+    jqueryCheck: 'if (typeof jQuery === \'undefined\') { throw new Error(\'UnderTasker\\\'s JavaScript requires jQuery\') }\n\n',
 
     // Task configuration.
     clean: {
       dist: ['dist']
     },
 
+    coffee: {
+        compile: {
+            files: {
+                // 'source/js/app.js': 'source/coffee/source.coffee', // 1:1 compile
+                'source/js/app.js': ['source/coffee/*.coffee'] // compile and concat into single file
+            }
+        },
+    },
+
     jshint: {
       options: {
-        jshintrc: '_assets/js/.jshintrc'
+        jshintrc: 'source/js/.jshintrc'
       },
       grunt: {
         options: {
@@ -47,16 +53,16 @@ module.exports = function (grunt) {
         src: ['Gruntfile.js', 'grunt/*.js']
       },
       src: {
-        src: '_assets/js/*.js'
+        src: 'source/js/*.js'
       },
       test: {
-        src: '_assets/js/tests/unit/*.js'
+        src: 'source/js/tests/unit/*.js'
       }
     },
 
     jscs: {
       options: {
-        config: '_assets/js/.jscsrc'
+        config: 'source/js/.jscsrc'
       },
       grunt: {
         options: {
@@ -81,13 +87,14 @@ module.exports = function (grunt) {
         banner: '<%= banner %>\n<%= jqueryCheck %>',
         stripBanners: false
       },
-      underlost: {
+      undertask: {
         src: [
-          '_assets/js/lib/raphael-2.0.1.js',
-          '_assets/js/lib/abstract-0.1.js',
-          '_assets/js/handler.js'
+          'source/js/lib/particles.js',
+          // 'source/js/lib/jquery.lettering-0.6.1.min.js',
+          // 'source/js/lib/jquery.history.min.js',
+          'source/js/handler.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.slug %>.js'
       }
     },
 
@@ -95,20 +102,20 @@ module.exports = function (grunt) {
       options: {
         report: 'min'
       },
-      underlost: {
+      undertask: {
         options: {
           banner: '<%= banner %>'
         },
-        src: '<%= concat.underlost.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        src: '<%= concat.undertask.dest %>',
+        dest: 'dist/js/<%= pkg.slug %>.min.js'
       }
     },
 
     qunit: {
       options: {
-        inject: '_assets/js/tests/unit/phantom.js'
+        inject: 'source/js/tests/unit/phantom.js'
       },
-      files: '_assets/js/tests/index.html'
+      files: 'source/js/tests/index.html'
     },
 
     less: {
@@ -117,11 +124,11 @@ module.exports = function (grunt) {
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapURL: '<%= pkg.slug %>.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.slug %>.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': '_assets/less/underlost.less'
+          'dist/css/<%= pkg.slug %>.css': 'source/less/<%= pkg.slug %>.less'
         }
       },
       minify: {
@@ -130,8 +137,7 @@ module.exports = function (grunt) {
           report: 'min'
         },
         files: {
-          'dist/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css',
-          'dist/css/<%= pkg.name %>-theme.min.css': 'dist/css/<%= pkg.name %>-theme.css'
+          'dist/css/<%= pkg.slug %>.min.css': 'dist/css/<%= pkg.slug %>.css'
         }
       }
     },
@@ -144,24 +150,23 @@ module.exports = function (grunt) {
         options: {
           map: true
         },
-        src: 'dist/css/<%= pkg.name %>.css'
+        src: 'dist/css/<%= pkg.slug %>.css'
       }
     },
 
     csslint: {
       options: {
-        csslintrc: 'less/.csslintrc'
+        csslintrc: 'source/less/.csslintrc'
       },
       src: [
-        'dist/css/underlost.css',
-        'dist/css/underlost-theme.css'
+        'dist/css/<%= pkg.slug %>.css'
       ]
     },
 
     cssmin: {
       options: {
         keepSpecialComments: '*',
-        noAdvanced: true, // turn advanced optimizations off until the issue is fixed in clean-css
+        noAdvanced: true,
         report: 'min',
         compatibility: 'ie8'
       }
@@ -179,7 +184,7 @@ module.exports = function (grunt) {
 
     csscomb: {
       options: {
-        config: '_assets/less/.csscomb.json'
+        config: 'source/less/.csscomb.json'
       },
       dist: {
         expand: true,
@@ -193,7 +198,7 @@ module.exports = function (grunt) {
       dynamic: {
         files: [{
         expand: true,
-        cwd: '_assets/img/',
+        cwd: 'source/img/',
         src: ['**/*.{png,jpg,gif}'],
         dest: 'dist/img/'
       }]
@@ -203,12 +208,26 @@ module.exports = function (grunt) {
     copy: {
       fonts: {
         expand: true,
-        cwd: './_assets',
+        cwd: './src',
         src: [
           'fonts/*'
         ],
         dest: 'dist'
-      }
+      },
+      dist: {
+        expand: true,
+        cwd: './dist',
+        src: [
+          '{css,js}/*.min.*',
+          'css/*.map',
+          'fonts/*',
+          'img/*',
+          'img/work/*',
+          'img/rings/*',
+          'img/photo/*',
+        ],
+        dest: 'source/site/dist'
+      },
     },
 
     connect: {
@@ -221,7 +240,11 @@ module.exports = function (grunt) {
     },
 
     jekyll: {
-      source: {}
+      options : {
+        bundleExec: true,
+        src : 'source/site',
+      },
+      site: {}
     },
 
     validation: {
@@ -250,7 +273,7 @@ module.exports = function (grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       less: {
-        files: '_assets/less/*.less',
+        files: 'source/less/*.less',
         tasks: 'less'
       }
     },
@@ -260,82 +283,44 @@ module.exports = function (grunt) {
         options: {
           url: 'git@github.com:underlost/underlost.github.io.git',
           branch: 'gh-pages',
-          message: 'Deployed from gruntfile.js'
+          message: 'Deployed with grunt' // Commit message
         },
         src: '_site'
       },
-    },
-
-    sed: {
-      versionNumber: {
-        pattern: (function () {
-          var old = grunt.option('oldver');
-          return old ? RegExp.quote(old) : old;
-        })(),
-        replacement: grunt.option('newver'),
-        recursive: true
-      }
-    },
-
-    exec: {
-      npmUpdate: {
-        command: 'npm update'
-      },
-      npmShrinkWrap: {
-        command: 'npm shrinkwrap --dev'
-      }
     }
+
   });
 
-
   // These plugins provide necessary tasks.
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+  require('load-grunt-tasks')(grunt, {scope: 'dependencies'});
   require('time-grunt')(grunt);
 
-  // HTML validation task
-  grunt.registerTask('validate-html', ['jekyll', 'validation']);
-
-  // Git Deploy task
-  grunt.registerTask('dist-deploy', ['git_deploy:github']);
-
-  // Test task.
-  var testSubtasks = [];
-  // Skip core tests if running a different subset of the test suite
-  if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'core') {
-    testSubtasks = testSubtasks.concat(['dist-css', 'csslint', 'jshint', 'jscs', 'qunit']);
-  }
-  // Skip HTML validation if running a different subset of the test suite
-  if (!process.env.TWBS_TEST || process.env.TWBS_TEST === 'validate-html') {
-    testSubtasks.push('validate-html');
-  }
-  grunt.registerTask('test', testSubtasks);
-
   // JS distribution task.
-  grunt.registerTask('dist-js', ['concat', 'uglify']);
+  grunt.registerTask('build-js', ['concat', 'uglify']);
 
   // IMG distribution task.
-  grunt.registerTask('dist-img', ['imagemin']);
+  grunt.registerTask('build-img', ['imagemin']);
 
-  // CSS distribution task.
+  // CSS build task.
   grunt.registerTask('less-compile', ['less:compileCore']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer', 'usebanner', 'csscomb', 'less:minify', 'cssmin']);
+  grunt.registerTask('build-css', ['less-compile', 'autoprefixer', 'usebanner', 'csscomb', 'less:minify', 'cssmin']);
 
+  // HTML build/validation site task
+  grunt.registerTask('build-site', ['jekyll', 'validation']);
 
-  // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-img', 'copy:fonts']);
+  // Git Deploy task
+  grunt.registerTask('git-deploy', ['git_deploy:github']);
 
-  // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'update-shrinkwrap']);
+  // Test task.
+  grunt.registerTask('test', ['build-css', 'csslint', 'jshint', 'jscs', 'qunit']);
+
+  // Build static assets and HTML
+  grunt.registerTask('build', ['clean', 'build-css', 'build-js', 'build-img', 'build-site', 'copy:fonts', 'copy:dist']);
+
+  // Only build static assets, not html
+  grunt.registerTask('dist', ['clean', 'build-css', 'build-js', 'build-img', 'copy:fonts', 'copy:dist']);
 
   // Full Deploy
-  grunt.registerTask('deploy', ['validate-html', 'dist', 'dist-deploy']);
+  grunt.registerTask('deploy', ['git-deploy']);
 
-  // Version numbering task.
-  // grunt change-version-number --oldver=A.B.C --newver=X.Y.Z
-  // This can be overzealous, so its changes should always be manually reviewed!
-  grunt.registerTask('change-version-number', 'sed');
-
-  // Task for updating the npm packages used by the Travis build.
-  grunt.registerTask('update-shrinkwrap', ['exec:npmUpdate', 'exec:npmShrinkWrap', '_update-shrinkwrap']);
-  grunt.registerTask('_update-shrinkwrap', function () { updateShrinkwrap.call(this, grunt); });
 };
