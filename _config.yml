@@ -5,9 +5,9 @@ base-url:    /
 gems:
   - jekyll-sitemap
 
-source:      ./source/site
+source:      .
 destination: ./_site
-plugins:     ./source/site/_plugins
+plugins:     ._plugins
 
 future:      true
 lsi:         false
@@ -35,7 +35,19 @@ kramdown:
     coderay_css: style
 
 
-exclude: []
+exclude: [
+    CNAME,
+    node_modules,
+    validation-status.json,
+    validation-report.json,
+    gruntfile.js,
+    package.json,
+    Gemfile,
+    Gemfile.lock,
+    grunt,
+    .git,
+    source,
+]
 
 # Custom vars
 current_version:  0.2.2

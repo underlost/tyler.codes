@@ -718,8 +718,6 @@ function pJS_desktop(){
   });
 }
 
-
-
 /* MOBILE / TABLET */
 
 function pJS_mobile(){

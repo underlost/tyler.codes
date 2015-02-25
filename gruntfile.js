@@ -315,10 +315,10 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['build-css', 'csslint', 'jshint', 'jscs', 'qunit']);
 
   // Build static assets and HTML
-  grunt.registerTask('build', ['clean', 'build-css', 'build-js', 'build-img', 'build-site', 'copy:fonts', 'copy:dist']);
+  grunt.registerTask('build', ['clean', 'build-css', 'build-js', 'build-img', 'build-site', 'copy:fonts' /* 'copy:dist' */ ]);
 
   // Only build static assets, not html
-  grunt.registerTask('dist', ['clean', 'build-css', 'build-js', 'build-img', 'copy:fonts', 'copy:dist']);
+  grunt.registerTask('dist', ['clean', 'build-css', 'build-js', 'build-img', 'copy:fonts' /* 'copy:dist' */]);
 
   // Full Deploy
   grunt.registerTask('deploy', ['git-deploy']);
