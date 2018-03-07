@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% if page.color %}
+<style type="text/css">
+    h2.heading:before { background-color: RGBA({{ page.rgba }}); }
+</style>
+{% endif %}
+
+<div class="layout-single-column fadeRight main-content">
+    <h2 class="heading"><span>{{page.title}}</span></h2>
+
+    <div class="image-wrap">
+      <img class="img-responsive" alt="eQuire" src="{{page.image}}" />
+    </div>
+
+    {{content}}
+    {% if page.next_page or page.previous_page  %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination fadeUp">
+            <li class="page-item"><a class="page-link" href="/portfolio/{{page.previous_page}}/">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="/portfolio/{{page.next_page}}/">Next</a></li>
+        </ul>
+    </nav>
+    {% endif %}
+</div>

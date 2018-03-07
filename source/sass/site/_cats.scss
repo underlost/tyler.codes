@@ -1,0 +1,51 @@
+#cats {
+    text-shadow: none;
+    background: #333 url('../img/seattle.png') top center fixed no-repeat;
+    background-size: cover;
+
+    div {
+        width: 604px;
+        left: 50%;
+        margin-left: -302px;
+    }
+
+    h1 {
+        color: #363431;
+    }
+
+    ul {
+        position: relative;
+        list-style: none;
+        height: 404px;
+        margin-top: 50px;
+    }
+
+    li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+    }
+
+    li.last-active {
+        z-index: 9;
+    }
+
+    li.active {
+        z-index: 10;
+        -webkit-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+        -o-box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+        box-shadow: 0 0px 20px rgba(0, 0, 0, .2), 0 2px 3px rgba(0, 0, 0, .2);
+    }
+
+    li,
+    img {
+        width: 604px;
+        height: auto;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+}

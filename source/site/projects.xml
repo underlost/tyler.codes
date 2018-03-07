@@ -1,0 +1,38 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tyler.codes/portfolio</title>
+    <link>{{ site.site }}</link>
+    <atom:link href="{{ site.site }}feed.xml" rel="self" type="application/rss+xml" />
+    <description>Selected Works</description>
+    <language>en-us</language>
+    <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+
+    {% for post in site.portfolio reversed %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>{{ site.site }}{{ post.url }}</link>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>{{ site.site }}{{ post.id }}</guid>
+      <description>{{ post.deck | xml_escape }}</description>
+    </item>
+    {% endfor %}
+
+    {% for post in site.projects reversed %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>{{ site.site }}{{ post.url }}</link>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>{{ site.site }}{{ post.id }}</guid>
+      <description>{{ post.deck | xml_escape }}</description>
+    </item>
+    {% endfor %}
+
+  </channel>
+</rss>

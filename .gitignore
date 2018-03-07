@@ -31,10 +31,12 @@ nbproject
 *.komodoproject
 .komodotools
 
-# grunt-html-validation
-validation-status.json
-validation-report.json
-
-# Folders to ignore
+# Folders
 node_modules
+bower_components
 _site
+.publish
+tmp
+log
+.env
+dist

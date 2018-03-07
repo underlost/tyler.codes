@@ -1,0 +1,124 @@
+// body { background-image: url('../img/bg.gif'); }
+
+
+#wrapper {
+    padding: 40px 20px;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    //overflow: hidden;
+    background-color: rgba(#fff, .25);
+    .site-nav {
+        padding: 0;
+        margin: 0;
+    }
+    //#content { overflow: hidden; }
+}
+
+
+
+.layout-single-column {
+    position: relative;
+
+    hr { animation: visible 0.2s, rgbshift 6s infinite; }
+
+    & + & {
+        padding-top: 25px;
+        margin-top: 30px;
+        &:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: ' ';
+            height: 10px;
+            width: 1px;
+            background-color: #666;
+            animation: visible 0.2s, rgbshift 4s infinite;
+        }
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: ' ';
+            height: 1px;
+            width: 10px;
+            background-color: #666;
+            animation: visible 0.2s, rgbshift 4s infinite;
+        }
+    }
+
+    .image-wrap {
+        margin: 40px 0;
+        position: relative;
+
+        .img-responsive {
+            position: relative;
+            z-index: 10;
+            max-width: 100%;
+        }
+
+        &:before {
+            content: ' ';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            z-index: 5;
+            background-color: $site-secondary-alt;
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+
+
+.btn { letter-spacing: 1.5px; }
+.btn-default { background-color: #333; }
+.underlost-social { margin-top: 40px; }
+
+#background-wrapper {
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    position:fixed;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#background {
+    top:50%;
+    left:50%;
+    z-index:1;
+    width:3000px;
+    height:3000px;
+    position:absolute;
+    svg {
+        margin:-50% 0 0 -50%;
+        display:block;
+    }
+
+}
+
+@media all and (min-width:801px) {
+    #wrapper {
+        max-width: 650px;
+
+        .site-nav {
+            float: left;
+            position: fixed;
+            width: 150px;
+            //background-color: rgba(#333, .1);
+        }
+
+        #content {
+            margin-left: 150px;
+            border-left: solid 1px #ccc;
+            padding: 20px 0 20px 20px;
+        }
+    }
+    .container-zero {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+}

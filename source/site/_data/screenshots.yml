@@ -1,0 +1,61 @@
+designcor:
+    - caption: Homepage
+      url: /assets/img/portfolio/screenshots/designcor_1.jpg
+      thumb: /assets/img/portfolio/screenshots/designcor_1_thumb.jpg
+    - caption: About
+      url: /assets/img/portfolio/screenshots/designcor_2.jpg
+      thumb: /assets/img/portfolio/screenshots/designcor_2_thumb.jpg
+    - caption: Case Studies
+      url: /assets/img/portfolio/screenshots/designcor_3.jpg
+      thumb: /assets/img/portfolio/screenshots/designcor_3_thumb.jpg
+
+replica:
+    - caption: Dashboard
+      url: /assets/img/portfolio/screenshots/replica_1.jpg
+      thumb: /assets/img/portfolio/screenshots/replica_1_thumb.jpg
+    - caption: Editor
+      url: /assets/img/portfolio/screenshots/replica_2.jpg
+      thumb: /assets/img/portfolio/screenshots/replica_2_thumb.jpg
+    - caption: Blips
+      url: /assets/img/portfolio/screenshots/replica_3.jpg
+      thumb: /assets/img/portfolio/screenshots/replica_3_thumb.jpg
+
+mbarrington:
+    - caption: One
+      url: /assets/img/portfolio/screenshots/mbarr_1.jpg
+      thumb: /assets/img/portfolio/screenshots/mbarr_1_thumb.jpg
+    - caption: Two
+      url: /assets/img/portfolio/screenshots/mbarr_2.jpg
+      thumb: /assets/img/portfolio/screenshots/mbarr_2_thumb.jpg
+    - caption: Three
+      url: /assets/img/portfolio/screenshots/mbarr_3.jpg
+      thumb: /assets/img/portfolio/screenshots/mbarr_3_thumb.jpg
+
+gmachina:
+    - caption: Teaser
+      url: /assets/img/portfolio/screenshots/gmachina_1.jpg
+      thumb: /assets/img/portfolio/screenshots/gmachina_1_thumb.jpg
+    - caption: Ground substance
+      url: /assets/img/portfolio/screenshots/gmachina_2.jpg
+      thumb: /assets/img/portfolio/screenshots/gmachina_2_thumb.jpg
+    - caption: Goo Substance
+      url: /assets/img/portfolio/screenshots/gmachina_3.jpg
+      thumb: /assets/img/portfolio/screenshots/gmachina_3_thumb.jpg
+
+gamernews:
+    - caption: Frontpage
+      url: /assets/img/portfolio/screenshots/gamernews_1.jpg
+      thumb: /assets/img/portfolio/screenshots/gamernews_1_thumb.jpg
+
+jadedgamer:
+    - caption: Frontpage
+      url: /assets/img/portfolio/screenshots/jaded_1.jpg
+      thumb: /assets/img/portfolio/screenshots/jaded_1_thumb.jpg
+    - caption: Subscribe to only the feeds you want
+      url: /assets/img/portfolio/screenshots/jaded_2.jpg
+      thumb: /assets/img/portfolio/screenshots/jaded_2_thumb.jpg
+    - caption: Search results
+      url: /assets/img/portfolio/screenshots/jaded_3.jpg
+      thumb: /assets/img/portfolio/screenshots/jaded_3_thumb.jpg
+
+ilfi:

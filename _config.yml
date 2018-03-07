@@ -5,13 +5,13 @@ base-url:    /
 gems:
   - jekyll-sitemap
 
-source:      .
-destination: ./_site
-plugins:     ._plugins
+source:      ./source/site
+destination: ./.publish
+plugins_dir: ./source/site/_plugins
 
 future:      true
 lsi:         false
-highlighter: pygments
+highlighter: true
 markdown:    kramdown
 permalink:   blog/:title
 
@@ -26,31 +26,28 @@ kramdown:
   use_coderay: false
   input: GFM
 
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
+collections:
+  projects:
+    label: projects
+    output: true
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
+
+  portfolio:
+    label: portfolio
+    output: true
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
 
 
 exclude: [
-    CNAME,
-    node_modules,
-    validation-status.json,
-    validation-report.json,
-    gruntfile.js,
-    package.json,
-    Gemfile,
-    Gemfile.lock,
-    grunt,
-    .git,
-    source,
+  README.md,
+  CHANGELOG.md
 ]
 
 # Custom vars
-current_version:  0.2.2
+current_version:  2.1.0
 repo: https://github.com/underlost/underlost.github.io
-site: http://tyler.codes/
+site: https://tyler.codes/
 author: Tyler Rilling
+title: Tyler.Codes
