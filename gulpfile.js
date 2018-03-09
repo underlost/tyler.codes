@@ -161,7 +161,7 @@ gulp.task('github-deploy', function () {
 
   return gulp.src('./.publish/**/*')
     .pipe($.ghPages({
-      remoteUrl: 'https://github.com/underlost/underlost.github.io.git',
+      remoteUrl: 'https://github.com/underlost/tyler.codes.git',
       branch: 'gh-pages'
     }));
 });
@@ -204,7 +204,7 @@ gulp.task('github', function(callback) {
 gulp.task('deploy', function() {
     return gulp.src('./source/**/*')
     .pipe(git({
-        repository: 'https://github.com/underlost/underlost.github.io.git',
+        repository: 'https://github.com/underlost/tyler.codes.git',
         branches:   ['gh-pages'],
         message: 'Deployed with UnderTasker.'
     }));
