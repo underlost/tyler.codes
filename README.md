@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/underlost/underlost.github.io.svg?branch=master)](https://travis-ci.org/underlost/underlost.github.io)
-[![Dependencies](https://david-dm.org/underlost/underlost.github.io.svg)](https://david-dm.org/underlost/underlost.github.io)
+[![Build Status](https://travis-ci.org/underlost/tyler.codes.svg?branch=master)](https://travis-ci.org/underlost/tyler.codes)
+[![Dependencies](https://david-dm.org/underlost/tyler.codes.svg)](https://david-dm.org/underlost/tyler.codes)
 
 # Tyler.codes
 Tyler.codes is the personal site/portfolio of Tyler Rilling (that's me). It's a tiny Jekyll-based static site designed to work on Heroku, Github, and Amazon S3/CloudFront, but should work on any host you can upload a static website to.
