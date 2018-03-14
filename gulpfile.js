@@ -166,6 +166,7 @@ gulp.task('github-deploy', function () {
     }));
 });
 
+
 //Jekyll Tasks
 gulp.task('jekyll', function (done) {
     browserSync.notify(messages.jekyllBuild);
@@ -202,7 +203,7 @@ gulp.task('github', function(callback) {
 
 // Deploy to a .git repo
 gulp.task('deploy', function() {
-    return gulp.src('./source/**/*')
+    return gulp.src('.publish/**/*')
     .pipe(git({
         repository: 'https://github.com/underlost/tyler.codes.git',
         branches:   ['gh-pages'],

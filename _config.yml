@@ -1,8 +1,8 @@
-safe: True
 port: 4002
 base-url:    /
+url: 'https://tyler.codes'
 
-gems:
+plugins:
   - jekyll-sitemap
 
 source:      ./source/site
