@@ -48,6 +48,6 @@ exclude: [
 # Custom vars
 current_version:  2.1.0
 repo: https://github.com/underlost/underlost.github.io
-site: https://tyler.codes/
+site: https://tyler.codes
 author: Tyler Rilling
 title: Tyler.Codes

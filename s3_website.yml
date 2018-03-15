@@ -15,7 +15,7 @@ gzip_zopfli: true
 site: .publish
 
 s3_reduced_redundancy: true
-
+cloudfront_wildcard_invalidation: true
 cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DIST_ID'] %>
 
 cloudfront_distribution_config:
@@ -26,9 +26,6 @@ cloudfront_distribution_config:
      items:
        CNAME: tyler.codes
 
-# cloudfront_invalidate_root: true
+cloudfront_invalidate_root: true
 
 # concurrency_level: 5
-
-redirects:
-    /about/: /

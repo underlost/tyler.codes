@@ -6,6 +6,6 @@
   "keywords": ["ruby", "jekyll" ],
   "addons": [ "heroku-postgresql" ],
   "buildpacks": [
-    {"url": "https://github.com/andycroll/heroku-buildpack-jekyll.git"}
+    {"url": "https://github.com/underlost/heroku-buildpack-ruby-jekyll.git"}
   ],
 }

@@ -9,7 +9,7 @@
     "prestart": "yarn install",
     "build": "gulp build",
     "watch": "gulp watch",
-    "shipit": "gulp deploy",
+    "shipit": "gulp github",
     "start": "http-server -a localhost -p 8000 -c-1"
   },
   "dependencies": {
@@ -44,11 +44,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/underlost/underlost.github.io.git"
+    "url": "https://github.com/underlost/tyler.codes.git"
   },
   "author": "Tyler Rilling (https://underlost.net/)",
   "bugs": {
-    "url": "https://github.com/underlost/underlost.github.io/issues"
+    "url": "https://github.com/underlost/utyler.codes/issues"
   },
   "homepage": "https://tyler.codes"
 }
