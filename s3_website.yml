@@ -14,6 +14,9 @@ gzip_zopfli: true
 
 site: .publish
 
+exclude_from_upload:
+  - .git
+
 s3_reduced_redundancy: true
 cloudfront_wildcard_invalidation: true
 cloudfront_distribution_id: <%= ENV['CLOUDFRONT_DIST_ID'] %>
