@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tyler.codes/portfolio</title>
-    <link>https://tyler.codes/</link>
+    <link>https://tyler.codes</link>
     <atom:link href="https://tyler.codes/feed.xml" rel="self" type="application/rss+xml" />
     <description>Selected Works</description>
     <language>en-us</language>
-    <pubDate>Wed, 14 Mar 2018 08:33:39 -0700</pubDate>
-    <lastBuildDate>Wed, 14 Mar 2018 08:33:39 -0700</lastBuildDate>
+    <pubDate>Wed, 14 Mar 2018 20:49:13 -0700</pubDate>
+    <lastBuildDate>Wed, 14 Mar 2018 20:49:13 -0700</lastBuildDate>
 
     
     <item>
       <title>Equire</title>
-      <link>https://tyler.codes//portfolio/equire/</link>
+      <link>https://tyler.codes/portfolio/equire/</link>
       <pubDate>Fri, 01 Dec 2017 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/equire</guid>
+      <guid>https://tyler.codes/portfolio/equire</guid>
       <description></description>
     </item>
     
     <item>
       <title>S2SPR</title>
-      <link>https://tyler.codes//portfolio/s2spr/</link>
+      <link>https://tyler.codes/portfolio/s2spr/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/s2spr</guid>
+      <guid>https://tyler.codes/portfolio/s2spr</guid>
       <description></description>
     </item>
     
     <item>
       <title>GoNetYourSelf</title>
-      <link>https://tyler.codes//portfolio/gonetyourself/</link>
+      <link>https://tyler.codes/portfolio/gonetyourself/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/gonetyourself</guid>
+      <guid>https://tyler.codes/portfolio/gonetyourself</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unconference Theme</title>
-      <link>https://tyler.codes//portfolio/unconference/</link>
+      <link>https://tyler.codes/portfolio/unconference/</link>
       <pubDate>Tue, 01 Aug 2017 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/unconference</guid>
+      <guid>https://tyler.codes/portfolio/unconference</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wonderstream</title>
-      <link>https://tyler.codes//portfolio/wonderstream/</link>
+      <link>https://tyler.codes/portfolio/wonderstream/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/wonderstream</guid>
+      <guid>https://tyler.codes/portfolio/wonderstream</guid>
       <description></description>
     </item>
     
     <item>
       <title>International Living Future Institute</title>
-      <link>https://tyler.codes//portfolio/ilfi/</link>
+      <link>https://tyler.codes/portfolio/ilfi/</link>
       <pubDate>Thu, 29 Dec 2016 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/ilfi</guid>
+      <guid>https://tyler.codes/portfolio/ilfi</guid>
       <description></description>
     </item>
     
     <item>
       <title>Designcor</title>
-      <link>https://tyler.codes//portfolio/designcor/</link>
+      <link>https://tyler.codes/portfolio/designcor/</link>
       <pubDate>Sat, 01 Feb 2014 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/designcor</guid>
+      <guid>https://tyler.codes/portfolio/designcor</guid>
       <description></description>
     </item>
     
     <item>
       <title>M | Barrington</title>
-      <link>https://tyler.codes//portfolio/mbarrington/</link>
+      <link>https://tyler.codes/portfolio/mbarrington/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/mbarrington</guid>
+      <guid>https://tyler.codes/portfolio/mbarrington</guid>
       <description></description>
     </item>
     
@@ -86,55 +86,55 @@
     
     <item>
       <title>gMachina</title>
-      <link>https://tyler.codes//portfolio/gmachina/</link>
+      <link>https://tyler.codes/portfolio/gmachina/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/gmachina</guid>
+      <guid>https://tyler.codes/portfolio/gmachina</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Life Well Played</title>
-      <link>https://tyler.codes//portfolio/lifewellplayed/</link>
+      <link>https://tyler.codes/portfolio/lifewellplayed/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/lifewellplayed</guid>
+      <guid>https://tyler.codes/portfolio/lifewellplayed</guid>
       <description></description>
     </item>
     
     <item>
       <title>UnderTasker</title>
-      <link>https://tyler.codes//portfolio/undertasker/</link>
+      <link>https://tyler.codes/portfolio/undertasker/</link>
       <pubDate>Sun, 01 Jun 2014 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/undertasker</guid>
+      <guid>https://tyler.codes/portfolio/undertasker</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jaded Gamer</title>
-      <link>https://tyler.codes//portfolio/jadedgamer/</link>
+      <link>https://tyler.codes/portfolio/jadedgamer/</link>
       <pubDate>Thu, 01 May 2014 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/jadedgamer</guid>
+      <guid>https://tyler.codes/portfolio/jadedgamer</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gamer News</title>
-      <link>https://tyler.codes//portfolio/gamernews/</link>
+      <link>https://tyler.codes/portfolio/gamernews/</link>
       <pubDate>Tue, 01 Apr 2014 00:00:00 -0700</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/gamernews</guid>
+      <guid>https://tyler.codes/portfolio/gamernews</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vapor</title>
-      <link>https://tyler.codes//portfolio/vapor/</link>
+      <link>https://tyler.codes/portfolio/vapor/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 -0800</pubDate>
       <author>Tyler@underlost.net (Tyler Rilling)</author>
-      <guid>https://tyler.codes//portfolio/vapor</guid>
+      <guid>https://tyler.codes/portfolio/vapor</guid>
       <description></description>
     </item>
     
