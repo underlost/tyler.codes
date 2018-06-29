@@ -39,10 +39,16 @@ ga('send', 'pageview');
 </script>
 </head>
 <body class="{{ page.slug }}">
-<div id="wrapper" class=""><a name="top"></a>
-{% include header.html %}
-<main id="content" >{{ content }}</main>
-{% include footer.html %}
+<div id="wrapper" class="">
+  <a name="top"></a>
+  <div class="row no-gutters">
+    {% include header.html %}
+    <div class="col-md-6 offset-md-5">
+      <main id="content" class="site-content pr-md-5 mt-5">{{ content }}</main>
+    </div>
+    {% include footer.html %}
+  </div>
+
 </div>
 {% include javascript.html %}
 </body>

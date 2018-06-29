@@ -1,6 +1,6 @@
 {
   "name": "Tyler.Codes",
-  "slug": "underlost",
+  "slug": "tylercodes",
   "version": "2.1.0",
   "description": "A jekyll based static website.",
   "main": "gulpfile.js",
@@ -12,14 +12,16 @@
     "shipit": "gulp github",
     "start": "http-server -a localhost -p 8000 -c-1"
   },
-  "dependencies": {
-    "bootstrap": "4.0.0",
-    "browser-sync": "^2.23.5",
+  "devDependencies": {
+    "bootstrap": "4.1.1",
+    "browser-sync": "^2.24.4",
     "components-font-awesome": "*",
+    "css-doodle": "^0.3.0",
     "del": ">=3.0.0",
+    "fullpage.js": "^2.9.7",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": ">=4.1.0",
-    "gulp-clean-css": ">=3.9.2",
+    "gulp-clean-css": ">=3.9.4",
     "gulp-coffee": ">=3.0.2",
     "gulp-concat": "~2.6.0",
     "gulp-deploy-git": "~0.5.3",
@@ -28,7 +30,7 @@
     "gulp-jshint": ">=2.1.0",
     "gulp-load-plugins": "~1.5.0",
     "gulp-notify": "~3.2.0",
-    "gulp-rename": ">=1.2.2",
+    "gulp-rename": ">=1.2.3",
     "gulp-sass": ">=2.0.4",
     "gulp-sourcemaps": ">=2.6.3",
     "gulp-uglify": ">=3.0.0",
@@ -39,16 +41,26 @@
     "jquery": "^3.2.1",
     "jshint": ">=2.9.5",
     "jshint-stylish": ">=2.0.1",
+    "lightbox2": "^2.10.0",
+    "pace-js": "^1.0.2",
+    "paroller.js": "^1.3.1",
+    "pjax": "^0.2.6",
     "popper.js": "^1.12.3",
+    "raphael": "^2.2.7",
     "run-sequence": ">=2.2.1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/underlost/tyler.codes.git"
   },
-  "author": "Tyler Rilling (https://underlost.net/)",
+  "author": "Tyler Rilling (https://tyler.codes)",
   "bugs": {
-    "url": "https://github.com/underlost/utyler.codes/issues"
+    "url": "https://github.com/underlost/tyler.codes/issues"
   },
-  "homepage": "https://tyler.codes"
+  "homepage": "https://tyler.codes",
+  "dependencies": {
+    "@webcomponents/custom-elements": "^1.1.2",
+    "@webcomponents/shadydom": "^1.0.14",
+    "gulp-uglify-es": "^1.0.4"
+  }
 }

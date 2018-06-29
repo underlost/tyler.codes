@@ -1,59 +1,73 @@
 .site-nav {
-    margin: 0;
-    .rings { height: 200px; }
+  margin: 0;
+  //position: fixed;
+  left: 0;
+  top: 30%;
+  position: relative;
+  z-index: 10;
+  .vLine {
+    background: rgba($white, .35);
+    width: 5px;
+    height: 30px;
+    right: 3rem;
+    top: -200px;
+  }
+  .sections-nav {
+    border-right: 1px solid rgba($white, .15);
+    li {
+      margin: 0 0 14px;
+      font-size: 24px;
+      font-family: $headings-font-family;
 
-    .vLine {
-        background: #333;
-        width: 5px;
-        height: 24px;
+      a {
+        display: inline-block;
+        margin: 0 20px;
+        height: 28px;
+        font-weight: 300;
+        text-decoration: none;
+        text-transform: lowercase;
+        letter-spacing: 3px;
+        color: $white;
+        transition: all .25s ease-in;
+        position: relative;
+      }
+    }
+    .active {
+      animation: visible 0.2s, rgbshift 4s infinite;
+      & a:before {
+        content: '';
+        background-color: rgba(255, 255, 255, .15);
+        //background-color: lighten($body-bg, 10%);
+        position: absolute;
+        bottom: 0px;
         right: 0;
-        top: -200px;
+        height: 15px;
+        width: 125%;
+      }
     }
-
-    .sections-nav {
-        li {
-            margin: 0 0 5px 0;
-            font-size: 13px;
-
-            a {
-                display: block;
-                margin: 0 20px;
-                height: 24px;
-                text-decoration: none;
-                text-transform: lowercase;
-                letter-spacing: 1px;
-                color: #ccc;
-                transition: color .25s ease-in, background .25s ease-in, opacity .25s ease-in;
-            }
-        }
-        .active {
-            animation: visible 0.2s, rgbshift 4s infinite;
-        }
-        li:hover a,
-        .active a {
-            color: #333;
-            border-color: #333;
-
-        }
+    li:hover a,
+    .active a {
+      color: $primary;
+      border-color: $primary;
     }
+  }
 }
 
 .page-link {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 100;
-    margin-right: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 100;
+  margin-right: 2px;
 }
 
-
 @media all and (min-width:801px) {
-    .site-nav {
-        .sections-nav {
-            li {
-                a {
-                  border-bottom: 1px solid #ccc;
-                }
-            }
+  .site-nav {
+    .sections-nav {
+      li {
+        a {
+          //border-bottom: 1px solid #ccc;
         }
+      }
     }
+  }
 }

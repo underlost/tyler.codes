@@ -2,9 +2,9 @@
   "name": "Tyler.Codes",
   "description": "A jekyll based static website.",
   "image": "heroku/ruby",
-  "repository": "https://github.com/underlost/underlost.github.io",
+  "repository": "https://github.com/underlost/tyler.codes",
   "keywords": ["ruby", "jekyll" ],
-  "addons": [ "heroku-postgresql" ],
+  "addons": [],
   "buildpacks": [
     {"url": "https://github.com/underlost/heroku-buildpack-ruby-jekyll.git"}
   ],

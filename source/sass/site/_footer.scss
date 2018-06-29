@@ -1,21 +1,21 @@
 .site-footer {
     position: relative;
-    color: #1a1a1a;
+    z-index: 10;
+    //color: #1a1a1a;
     letter-spacing: 1.5px;
-    padding-top: 10px;
-    a { color: darken(#fafafa, 50%); }
-    a:hover { color: #1a1a1a;}
+    //a { color: darken(#fafafa, 50%); }
+    //a:hover { color: #1a1a1a;}
 
     &:before {
         content: ' ';
         display: block;
-        height: 4px;
-        width: 15px;
-        background-color: #1a1a1a;
+        height: 1px;
+        width: 25px;
+        background-color: $white;
         margin-bottom: 10px;
     }
 }
 
 @media all and (min-width:801px) {
-    .site-footer { margin: 40px 0 0 150px; }
+    .site-footer {}
 }

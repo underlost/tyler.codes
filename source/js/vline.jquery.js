@@ -37,7 +37,6 @@
             });
         }
     }
-
     //make it a function!
     $.fn.vLine = function( method ) {
         if (methods[method]) {

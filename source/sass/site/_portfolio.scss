@@ -1,49 +1,54 @@
-.portfolio-picks {
-    .portfolio-item {
-        margin-bottom: 20px;
-        position: relative;
+.portfolio-item {
+  margin-bottom: 20px;
 
-        &:hover {
-            &:before {
-                display: block;
-                background-color: $site-secondary;
-                content: ' ';
-                height: 40px;
-                width: 40px;
-                position: absolute;
-                top: -8px;
-                right: 0;
-                z-index: 5;
-            }
-        }
+  .portfolio-item-inner {
+    background-color: #241b57;
+    .h6, .h4 {
+      position: absolute;
+      bottom: 18px;
+      left: -8px;
+      right: 24px;
+      z-index: 10;
+      background-color: rgba($primary, .75);
+      padding: 10px;
+      color: $white;
 
-        .thumbnail {
-            display: block;
-            margin: 0;
-            padding: 0;
-            height: 150px;
-            background-position: center;
-            background-size: cover;
-            position: relative;
-            z-index: 10;
-            p {
-                display: block;
-                padding: 10px;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0,0,0,.65);
-                color: #ddd;
-                transition: all 0.3s ease;
-                opacity: 1;
-                span {
-                    color: #fff;
-                    font-size: 16px;
-                    font-weight: 400;
-                }
-            }
-            &:hover {
-                p { opacity: 0; }
-            }
-        }
     }
+  }
+  &.col-12 {
+    .portfolio-item-inner {
+      .h6, .h4 {
+        right: 50%;
+        left: -20px;
+      }
+      &.odd {
+        .h6, .h4 {
+          left: 50%;
+          right: -20px;
+        }
+      }
+    }
+  }
+
+  &.col-6 {
+    .portfolio-item-inner {
+      .h6, .h4 {
+        opacity: 0;
+      }
+
+    }
+  }
+
+  .thumbnail {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 150px;
+    filter: grayscale(100%);
+    opacity: .25;
+    & > p {opacity: 0;}
+    &:hover {
+      opacity: .95;
+    }
+  }
 }

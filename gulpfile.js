@@ -14,7 +14,8 @@ var gulp   = require('gulp'),
     autoprefixer = require('gulp-autoprefixer');
     cleanCSS = require('gulp-clean-css');
     rename = require('gulp-rename'); // to rename any file
-    uglify = require('gulp-uglify');
+    //uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify-es').default;
     del = require('del');
     stylish = require('jshint-stylish');
     runSequence = require('run-sequence');
@@ -35,25 +36,25 @@ var gulp   = require('gulp'),
 
 // Cleans the web dist folder
 gulp.task('clean', function () {
-    del(['dist/']);
-    del(['source/site/assets/img/*']);
-    del(['source/site/assets/js/*']);
-    del(['source/site/assets/css/*']);
-    del(['.publish']);
+  del(['dist/']);
+  del(['source/site/assets/img/*']);
+  del(['source/site/assets/js/*']);
+  del(['source/site/assets/css/*']);
+  del(['.publish']);
 });
 
 // Copy dist
 gulp.task('copy-dist', function() {
-    gulp.src('source/site/assets/**/*.*')
-    .pipe(gulp.dest('dist'));
+  gulp.src('source/site/assets/**/*.*')
+  .pipe(gulp.dest('dist'));
 });
 
 // Copy fonts task
 gulp.task('copy-fonts', function() {
-    gulp.src('source/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
-    .pipe(gulp.dest('source/site/assets/fonts'));
-    gulp.src('node_modules/components-font-awesome/webfonts/*.{ttf,woff,eof,svg,eot,woff2,otf}')
-    .pipe(gulp.dest('source/site/assets/fonts'));
+  gulp.src('source/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
+  .pipe(gulp.dest('source/site/assets/fonts'));
+  gulp.src('node_modules/components-font-awesome/webfonts/*.{ttf,woff,eof,svg,eot,woff2,otf}')
+  .pipe(gulp.dest('source/site/assets/fonts'));
 });
 
 // Minify Images
@@ -65,23 +66,21 @@ gulp.task('imagemin', function() {
 
 // Copy Components
 gulp.task('copy-components', function() {
-    gulp.src('node_modules/components-font-awesome/scss/**/*.*')
-    .pipe(gulp.dest('source/sass/font-awesome'));
-    gulp.src('node_modules/bootstrap/scss/**/*.*')
-    .pipe(gulp.dest('source/sass/bootstrap'));
+  gulp.src('node_modules/components-font-awesome/scss/**/*.*')
+  .pipe(gulp.dest('source/sass/font-awesome'));
+  gulp.src('node_modules/bootstrap/scss/**/*.*')
+  .pipe(gulp.dest('source/sass/bootstrap'));
 });
 
 gulp.task('install', function(callback) {
-    runSequence(
-        'copy-components', 'copy-fonts', callback
-    );
+  runSequence('copy-components', 'copy-fonts', callback);
 });
 
 // Compile coffeescript to JS
 gulp.task('brew-coffee', function() {
-    gulp.src('source/coffee/*.coffee')
-        .pipe(coffee({bare: true}).on('error', gutil.log))
-        .pipe(gulp.dest('source/js/coffee/'))
+  gulp.src('source/coffee/*.coffee')
+    .pipe(coffee({bare: true}).on('error', gutil.log))
+    .pipe(gulp.dest('source/js/coffee/'))
 });
 
 // CSS Build Task
@@ -103,53 +102,54 @@ gulp.task('build-css', function() {
 
 // Concat All JS into unminified single file
 gulp.task('concat-js', function() {
-    return gulp.src([
-      'node_modules/jquery/dist/jquery.min.js',
-      'source/js/lib/raphael-2.0.1.js',
-      'source/js/lib/abstract-0.1.js',
-
-      'source/js/vline.jquery.js',
-      'source/js/jquery.colorbox.js',
-      'source/js/pace.min.js',
-      'source/js/jquery.history.min.js',
-
-      'source/js/abstract.js',
-      'source/js/handler.js',
-      // Coffeescript
-      'source/js/coffee/*.*',
-    ])
-    .pipe(sourcemaps.init())
-        .pipe(concat('site.js'))
-        .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('source/site/assets/js'));
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/lightbox2/dist/js/lightbox.js',
+    'node_modules/paroller.js/dist/jquery.paroller.js',
+    'node_modules/pace-js/pace.js',
+    'node_modules/pjax/pjax.js',
+    'node_modules/fullpage.js/dist/jquery.fullpage.js',
+    'node_modules/@webcomponents/shadydom/shadydom.min.js',
+    'node_modules/@webcomponents/custom-elements/custom-elements.min.js',
+    'node_modules/css-doodle/css-doodle.js',
+    'source/js/vline.jquery.js',
+    'source/js/activeNavigation.jquery.js',
+    'source/js/site.js',
+    // Coffeescript
+    'source/js/coffee/*.*',
+  ])
+  .pipe(sourcemaps.init())
+      .pipe(concat('site.js'))
+      .pipe(sourcemaps.write('./maps'))
+  .pipe(gulp.dest('source/site/assets/js'));
 });
 
 // configure the jshint task
 gulp.task('jshint', function() {
-    return gulp.src('source/js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'));
+  return gulp.src('source/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 // Shrinks all the js
 gulp.task('shrink-js', function() {
-    return gulp.src('source/site/assets/js/site.js')
-    .pipe(uglify())
-    .pipe(rename('site.min.js'))
-    .pipe(gulp.dest('source/site/assets/js'))
+  return gulp.src('source/site/assets/js/site.js')
+  .pipe(uglify())
+  .pipe(rename('site.min.js'))
+  .pipe(gulp.dest('source/site/assets/js'))
 });
 
 // Default Javascript build task
 gulp.task('build-js', function(callback) {
-    runSequence('concat-js', 'shrink-js', callback);
+  runSequence('concat-js', 'shrink-js', callback);
 });
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
-    gulp.watch('source/coffee/**/*.js', ['brew-coffee', 'build-js', 'copy-dist']);
-    gulp.watch('source/js/**/*.js', ['build-js', 'copy-dist']);
-    gulp.watch('source/sass/**/*.scss', ['build-css', 'copy-dist']);
-    gulp.watch(['source/site/*.html', 'source/site/_layouts/*.html'], ['jekyll-rebuild']);
+  gulp.watch('source/coffee/**/*.js', ['brew-coffee', 'build-js', 'copy-dist']);
+  gulp.watch('source/js/**/*.js', ['build-js', 'copy-dist']);
+  gulp.watch('source/sass/**/*.scss', ['build-css', 'copy-dist']);
+  gulp.watch(['source/site/*.html', 'source/site/_layouts/*.html'], ['jekyll-rebuild']);
 });
 
 // Deploy to GitHub Pages
@@ -169,9 +169,9 @@ gulp.task('github-deploy', function () {
 
 //Jekyll Tasks
 gulp.task('jekyll', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return child.spawn( jekyll , ['build'], {stdio: 'inherit'})
-        .on('close', done);
+  browserSync.notify(messages.jekyllBuild);
+  return child.spawn( jekyll , ['build'], {stdio: 'inherit'})
+    .on('close', done);
 });
 
 gulp.task('jekyll-rebuild', ['jekyll'], function () {
@@ -179,36 +179,36 @@ gulp.task('jekyll-rebuild', ['jekyll'], function () {
 });
 
 gulp.task('browser-sync', ['build', 'jekyll'], function() {
-    browserSync({
-        server: {
-            baseDir: '.publish'
-        }
-    });
+  browserSync({
+    server: {
+      baseDir: '.publish'
+    }
+  });
 });
 
 // Default build task
 gulp.task('build', function(callback) {
-    runSequence(
-        'imagemin', ['build-css', 'build-js'],
-        ['copy-dist', ], callback
-    );
+  runSequence(
+    'imagemin', ['build-css', 'build-js'],
+    ['copy-dist', ], callback
+  );
 });
 
 // Deploy to github
 gulp.task('github', function(callback) {
-    runSequence(
-        'clean', 'build', 'jekyll', 'github-deploy', callback
-    );
+  runSequence(
+    'clean', 'build', 'jekyll', 'github-deploy', callback
+  );
 });
 
 // Deploy to a .git repo
-gulp.task('deploy', function() {
-    return gulp.src('.publish/**/*')
-    .pipe(git({
-        repository: 'https://github.com/underlost/tyler.codes.git',
-        branches:   ['gh-pages'],
-        message: 'Deployed with UnderTasker.'
-    }));
+gulp.task('git', function() {
+  return gulp.src('.publish/**/*')
+  .pipe(git({
+    repository: 'https://github.com/underlost/tyler.codes.git',
+    branches:   ['master'],
+    message: 'Deployed with UnderTasker.'
+  }));
 });
 
 // Default task will build the jekyll site, launch BrowserSync & watch files.

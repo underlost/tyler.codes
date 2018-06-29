@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="layout-single-column fadeRight main-content">
+<div class="layout-single-column fadeRight">
   <h2 class="heading"><span>{{page.title}}</span></h2>
     {{content}}
     {% if page.next_page or page.previous_page  %}
@@ -17,12 +17,13 @@ layout: default
   <div class="layout-single-column fadeLeft mt-5">
     <h2 class="heading"><span>Client Work</span></h2>
       <div id="recent-portfolio-container" class="portfolio-picks">
-          <ul class="list-unstyled row clearfix" id="recent-portfolio">
+          <ul class="list-unstyled row no-gutters clearfix" id="recent-portfolio">
           {% for post in site.portfolio reversed %}
-              <li class="col-6 portfolio-item">
-                  <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
-                      <p><span>{{ post.title }}:</span> <small>{{ post.description }}</small></p>
-                  </a>
+              <li class="col-6 portfolio-item mb-4">
+                <a class="portfolio-item-inner d-block mr-4" href="/portfolio/{{ post.slug }}/">
+                  <h6 class="h6"><span>{{ post.title }}:</span> <small>{{ post.description }}</small></h6>
+                  <span class="thumbnail img-rounded d-block" alt="{{ post.title }}"  style="background-image: url('{{ post.image }}');"></span>
+                </a>
               </li>
           {% endfor %}
           </ul>
@@ -32,10 +33,11 @@ layout: default
       <div id="recent-project-container" class="portfolio-picks">
           <ul class="list-unstyled row clearfix" id="recent-portfolio">
           {% for post in site.projects reversed %}
-              <li class="col-6 portfolio-item">
-                  <a class="thumbnail img-rounded" alt="{{ post.title }}" href="/portfolio/{{ post.slug }}/" style="background-image: url('{{ post.image }}');">
-                      <p><span>{{ post.title }}:</span> <small>{{ post.description }}</small></p>
-                  </a>
+              <li class="col-12 portfolio-item mb-5">
+                <a class="portfolio-item-inner d-block {% cycle 'odd', 'even' %}" href="/portfolio/{{ post.slug }}/">
+                  <h6 class="h4"><span>{{ post.title }}:</span> <small>{{ post.description }}</small></h4>
+                  <span class="thumbnail img-rounded d-block" alt="{{ post.title }}"  style="background-image: url('{{ post.image }}');"></span>
+                </a>
               </li>
           {% endfor %}
           </ul>

@@ -1,4 +1,33 @@
-<footer class="site-footer">
+<footer class="site-footer col-md-6 offset-md-5 py-4">
   {% include social.html %}
   <small class="copyright">Copyright &copy; 2002–2018. Last <a href="https://github.com/underlost/tyler.codes/">updated {{ site.time | date: "%B %d, %Y" }}</a>.</small>
 </footer>
+
+<div class="background-container parallax">
+  <css-doodle class="background fadeIn">
+    :doodle {
+      @grid: 1x300 / 90vmin 50vmin;
+      transform: scale(2);
+    }
+    :container {
+      transform: translateY(0%);
+      grid-template-columns: repeat(auto-fill, 1vmin);
+      grid-template-rows: auto;
+      grid-auto-flow: dense;
+      height: 200vh;
+    }
+
+    --span: @rand(2, 7);
+    :nth-child(17n) { --span: 10; }
+    :nth-child(23n) { --span: 1; }
+
+    grid-column-end: span var(--span);
+    grid-row-end: span var(--span);
+
+    :after {
+      content: '\@hex(@rand(0x2686, 0x2689))';
+      font-size: calc(3vmin * var(--span) * .55);
+      color: @pick(#241b57, #241b57, #241b57, #241b57);
+    }
+  </css-doodle>
+</div>
