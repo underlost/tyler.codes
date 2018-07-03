@@ -36,7 +36,7 @@ h1.heading {
   font-size: 3.5rem;
   span {
     //font-weight: bold;
-    color: $secondary;
+    background-color: $blue;
     &:after {
       content: '';
       position: absolute;
@@ -52,7 +52,7 @@ h1.heading {
 h2.heading {
     font-size: 2.5rem;
     margin: 0 0 40px;
-    color: $secondary;
+    color: $black;
     &:before {
         //background-color: $white;
         //height: 1px;

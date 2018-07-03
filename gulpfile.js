@@ -112,7 +112,10 @@ gulp.task('concat-js', function() {
     'node_modules/@webcomponents/shadydom/shadydom.min.js',
     'node_modules/@webcomponents/custom-elements/custom-elements.min.js',
     'node_modules/css-doodle/css-doodle.js',
+    'node_modules/raphael/raphael.js',
+    'source/js/abstract.js',
     'source/js/vline.jquery.js',
+    'source/js/background.js',
     'source/js/activeNavigation.jquery.js',
     'source/js/site.js',
     // Coffeescript

@@ -1,18 +1,20 @@
 //Colors:
-$green: transparent;
-$blue: transparent;
-$pink: #ff0000;
+$green: #00ff00 !default;
+$blue: #00FFFF !default;
+$pink: #FF32AD !default;
+$yellow: #ffdd65 !default;
 $white: #fff;
 
 // Bootstrap overrides
-$primary: #ed403a !default;
-$secondary: #32FECD !default;
-$body-bg: #140f30 !default;
-$body-color: #fff !default;
-$link-color: $primary;
+$primary: $blue !default;
+$secondary: $pink !default;
+$body-bg: #fff !default;
+$body-color: #1a1a1a !default;
+$link-color: #000;
 $font-family-sans-serif: "europa", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-monospace: "ubuntu-mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $headings-font-family: "futura-pt", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
 $grid-gutter-width-base: 20px !default;
 $border-radius: 0 !default;
 $border-radius-lg: 0 !default;
@@ -32,4 +34,9 @@ $pace-color: $primary;
 $site-primary: $blue;
 $site-secondary: $green;
 $site-secondary-alt: $green;
-$site-highlight: $pink;
+$site-highlight: $yellow;
+
+
+//site
+
+$nav-color: #000;

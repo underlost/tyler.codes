@@ -2,14 +2,14 @@
   margin-bottom: 20px;
 
   .portfolio-item-inner {
-    background-color: #241b57;
+    background-color: $white;
     .h6, .h4 {
       position: absolute;
       bottom: 18px;
       left: -8px;
       right: 24px;
       z-index: 10;
-      background-color: rgba($primary, .75);
+      background-color: rgba($white, .75);
       padding: 10px;
       color: $white;
 

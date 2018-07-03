@@ -7,6 +7,7 @@
 
 @import "site/pace";
 //@import "site/fullpage";
+@import "site/background";
 @import "site/lightbox";
 @import "site/animation";
 @import "site/header";
@@ -16,21 +17,3 @@
 @import "site/portfolio";
 @import "site/rings";
 @import "site/footer";
-
-
-.background-container {
-  //overflow: hidden;
-  position: fixed;
-  top: 0; bottom: 0; left: 0; right: 0;
-  opacity: .4;
-  width: 100%;
-
-  .background {
-    position: fixed;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    height: 250vh;
-    overflow: hidden;
-    width: 100%;
-  }
-}

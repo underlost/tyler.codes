@@ -5,14 +5,15 @@
   };
   $(document).ready(function() {
     //console.log('Ready');
+    RenderBackground.init();
     $(document).activeNavigation(".sections-nav");
     animateClasses();
     fullscreener($('.' + $classes.FsrImage));
     $('.sections-nav').vLine();
     $('.content-section').removeClass("hidden").addClass("fadeIn");
     //SectionFullpage();
-    jQuery(".parallax").paroller({ factor: '-0.4', type: 'foreground', direction: 'vertical' });
-    jQuery(".parallax-menu").paroller({ factor: '1', type: 'foreground', direction: 'vertical' });
+    jQuery(".parallax").paroller({ factor: '-0.1', type: 'foreground', direction: 'vertical' });
+    //jQuery(".parallax-menu").paroller({ factor: '1', type: 'foreground', direction: 'vertical' });
 
   });
   $(document).on('pjax:success', function () {
@@ -81,6 +82,8 @@
       }
     });
   };
+
+
 })(jQuery);
 
 lightbox.option({

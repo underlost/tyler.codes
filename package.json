@@ -1,7 +1,7 @@
 {
   "name": "Tyler.Codes",
   "slug": "tylercodes",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A jekyll based static website.",
   "main": "gulpfile.js",
   "private": true,
@@ -10,9 +10,9 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "shipit": "gulp github",
-    "start": "http-server -a localhost -p 8000 -c-1"
+    "start": "bundle exec jekyll serve --w"
   },
-  "devDependencies": {
+  "dependencies": {
     "bootstrap": "4.1.1",
     "browser-sync": "^2.24.4",
     "components-font-awesome": "*",
@@ -47,7 +47,11 @@
     "pjax": "^0.2.6",
     "popper.js": "^1.12.3",
     "raphael": "^2.2.7",
-    "run-sequence": ">=2.2.1"
+    "run-sequence": ">=2.2.1",
+    "@webcomponents/custom-elements": "^1.1.2",
+    "@webcomponents/shadydom": "^1.0.14",
+    "gulp-uglify-es": "^1.0.4",
+    "raphael": "^2.2.7"
   },
   "repository": {
     "type": "git",
@@ -57,10 +61,5 @@
   "bugs": {
     "url": "https://github.com/underlost/tyler.codes/issues"
   },
-  "homepage": "https://tyler.codes",
-  "dependencies": {
-    "@webcomponents/custom-elements": "^1.1.2",
-    "@webcomponents/shadydom": "^1.0.14",
-    "gulp-uglify-es": "^1.0.4"
-  }
+  "homepage": "https://tyler.codes"
 }
