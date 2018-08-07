@@ -4,12 +4,9 @@ title: International Living Future Institute
 slug: ilfi
 description: A Drupal to WordPress migration & custom theme
 color: EF4900
-rgba: 239,73,0,.75
 image: /assets/img/portfolio/ilfi.jpg
 permalink: /portfolio/ilfi/
 date: 2016-12-29
-previous_page: gonetyourself
-next_page: s2spr
 ---
 
 The International Living Future Institute (ILFI) is a nonprofit that aims to build an ecologically-minded, restorative world for all people. Fighting for social and environmental justice, ILFI looks to battle climate change and rid urban environments of dependency of fossil fuels.

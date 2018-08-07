@@ -7,8 +7,6 @@ color: 919799
 image: /assets/img/portfolio/undertasker.jpg
 permalink: /portfolio/undertasker/
 date: 2014-06-01
-previous_page: lifewellplayed
-next_page: jadedgamer
 ---
 
 UnderTasker helps you bootstrap your website/app using a Gulp & Node.JS stack that's also highly configurable. Out of the box, UnderTasker compiles assets like coffeescript and SASS, compresses Javascript with UglifyJS, and autoprefixes CSS. It can also compress images using Imagemin. It can also be used to quickly publish static HTML sites to services like Github Pages.

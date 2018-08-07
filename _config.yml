@@ -39,6 +39,12 @@ collections:
     relative_directory: portfolio/:slug
     directory: portfolio/:slug
 
+  misc:
+    label: misc
+    output: true
+    relative_directory: portfolio/:slug
+    directory: portfolio/:slug
+
 
 exclude: [
   README.md,

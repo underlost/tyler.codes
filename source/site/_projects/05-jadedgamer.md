@@ -8,8 +8,7 @@ rgba: 87,173,104,.5
 image: /assets/img/portfolio/jaded.jpg
 permalink: /portfolio/jadedgamer/
 date: 2014-05-01
-previous_page: lifewellplayed
-next_page: gmachina
+published: false
 ---
 
 Jaded Gamer was a video game news site aggregator, run and managed completely in the cloud, utilizing various SAAS applications. RSS updates were pushed to the site via the pubsubhubbub protocol. New stories were then indexed immediately, and could be searched through by the elastic-search based server. For additional details, you can learn more on [Medium](https://medium.com/@underlost/building-jaded-gamer-e08c6532b56d#.ew1sszjq9).

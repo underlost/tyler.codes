@@ -4,7 +4,6 @@ title: M | Barrington
 slug: mbarrington
 description: 'Concept, design, and code for local insurance company'
 color: f9a61a
-rgba: 249,166,26,.5
 image: /assets/img/portfolio/mbarr.jpg
 permalink: /portfolio/mbarrington/
 date: 2014-01-01
@@ -24,5 +23,3 @@ M Barrington was a collaboration with local design agency, Designcor. I consulte
 </li>
 {% endfor %}
 </ul>
-
-[Visit M Barrington &raquo;](http://mbarrington.com)

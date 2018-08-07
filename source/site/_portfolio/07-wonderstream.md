@@ -4,12 +4,9 @@ title: Wonderstream
 slug: wonderstream
 description: Livestreaming Made Easy.
 color: EF4900
-rgba: 239,73,0,.75
 image: /assets/img/portfolio/wonderstream.jpg
 permalink: /portfolio/wonderstream/
 date: 2017-04-01
-previous_page: s2spr
-next_page: mbarrington
 ---
 
 Wonderstream, originally branded as Frontrow.Live, is a live streaming startup service. As Sembia, partnered with the amazing design firm [Wildern](http://hellowildern.com) to build a beautifully designed and functional live streaming platform.

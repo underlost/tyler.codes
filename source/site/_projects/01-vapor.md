@@ -4,13 +4,10 @@ title: Vapor
 slug: vapor
 description: 'Backpack viewer for Valve Web API'
 color: 1b2638
-rgba: 27,38,56,.75
 image: /assets/img/portfolio/vapor.jpg
 permalink: /portfolio/vapor/
 date: 2014-03-01
-previous_page: gmachina
-next_page: gamernews
-retired: true
+published: false
 ---
 
 Vapor is a weekend project from a while back when I wanted to better understand Valve's Steam Web API. it can be used to view your most played games as well as your item backpacks.

@@ -8,8 +8,7 @@ rgba: 239,73,0,.75
 image: /assets/img/portfolio/equire.jpg
 permalink: /portfolio/equire/
 date: 2017-12-01
-previous_page: s2spr
-next_page: mbarrington
+published: false
 ---
 
 I helped bring [Wildern's](http://hellowildern.com) designs to life in the form of static HTML templates, to be able to be handed of to the client's developer team to implement in their custom backend system.

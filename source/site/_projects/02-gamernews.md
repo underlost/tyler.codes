@@ -8,8 +8,6 @@ rgba: 149,32,103,.25
 image: /assets/img/portfolio/gamernews.jpg
 permalink: /portfolio/gamernews/
 date: 2014-04-01
-previous_page: vapor
-next_page: undertasker
 retired: true
 ---
 

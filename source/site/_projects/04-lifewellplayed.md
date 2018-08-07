@@ -4,12 +4,9 @@ title: A Life Well Played
 slug: lifewellplayed
 description: A blog about video games and pop culture
 color: 919799
-rgba: 145,154,153,.25
 image: /assets/img/portfolio/lifewellplayed.jpg
 permalink: /portfolio/lifewellplayed/
 date: 2014-06-01
-previous_page: undertasker
-next_page: jadedgamer
 ---
 
 A Life Well played is a blog in which I post social commentary on gender and sexuality in video games and pop culture. The site is powered by my custom Content Management system (CMS), Replica, written in Python/Django.
