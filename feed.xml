@@ -6,9 +6,54 @@
     <atom:link href="https://tyler.codes/feed.xml" rel="self" type="application/rss+xml" />
     <description>Tyler Rilling makes things on the internet.</description>
     <language>en-us</language>
-    <pubDate>Wed, 14 Mar 2018 20:49:13 -0700</pubDate>
-    <lastBuildDate>Wed, 14 Mar 2018 20:49:13 -0700</lastBuildDate>
+    <pubDate>Sat, 26 Jan 2019 12:04:36 -0800</pubDate>
+    <lastBuildDate>Sat, 26 Jan 2019 12:04:36 -0800</lastBuildDate>
 
+    
+    <item>
+      <title>Wildern</title>
+      <link>https://tyler.codes/site/wildern/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0800</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>https://tyler.codes/site/wildern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Life Well Played</title>
+      <link>https://tyler.codes/site/alifewellplayed/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0800</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>https://tyler.codes/site/alifewellplayed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>underlost.net</title>
+      <link>https://tyler.codes/site/underlost/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0800</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>https://tyler.codes/site/underlost/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Instagram</title>
+      <link>https://tyler.codes/site/instagram/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0800</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>https://tyler.codes/site/instagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://tyler.codes/site/github/</link>
+      <pubDate>Sat, 26 Jan 2019 00:00:00 -0800</pubDate>
+      <author>Tyler@underlost.net (Tyler Rilling)</author>
+      <guid>https://tyler.codes/site/github/</guid>
+      <description></description>
+    </item>
     
 
   </channel>

@@ -2,23 +2,21 @@
 # The humans responsible & technology colophon
 
 # TEAM
-
-    Tyler Rilling -- @underlost
+  Tyler Rilling -- @underlost
 
 # TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    SCSS
-    jQuery
-    Jekyll
-    Bootstrap
-    AWS S3, Cloudfront
-    Heroku
-    Memcachier
-    Paper Trail
-    Mixpanel
-    Unicorn
-    gulpfile
-    Undertasker
-    CloudFlare
-    Github
+  HTML5, CSS3
+  SCSS
+  jQuery
+  Jekyll
+  Bootstrap
+  AWS S3, Cloudfront
+  Heroku
+  Memcachier
+  Paper Trail
+  Mixpanel
+  Unicorn
+  gulpfile
+  Undertasker
+  CloudFlare
+  Github
