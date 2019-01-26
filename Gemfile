@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.1'
 
-gem 'jekyll', '3.8.2'
+gem 'jekyll', '>=3.8.4'
 gem 'jekyll-sitemap', '>=1.2.0'
 gem 'jekyll-seo-tag'
 gem 'RedCloth', '>=4.3.2'
