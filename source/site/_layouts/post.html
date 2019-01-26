@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1 class="sr-only">{{page.title}}</h1>
+<h2 class="sr-only">{{page.alt}}</h2>
+
+<a class="btn btn-primary btn-block text-left mb-3" href="{{page.website}}" target="_blank">
+  {% if page.icon %}<span>{{ page.icon }}</span>{% endif %}
+  {{page.title}}
+</a>
+
+{{page.content}}

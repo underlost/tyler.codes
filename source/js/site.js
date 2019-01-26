@@ -15,14 +15,6 @@
     jQuery(".parallax").paroller({ factor: '-0.1', type: 'foreground', direction: 'vertical' });
     //jQuery(".parallax-menu").paroller({ factor: '1', type: 'foreground', direction: 'vertical' });
 
-    var doodle = document.querySelector('css-doodle');
-
-    window.addEventListener('scroll', _.throttle(function () {
-      window.requestAnimationFrame(function () {
-        doodle.update();
-      });
-    }, 250));
-
   });
   $(document).on('pjax:success', function () {
     //console.log('state change');

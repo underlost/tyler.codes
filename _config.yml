@@ -1,9 +1,9 @@
 port: 4002
 base-url:    /
-url: 'https://tyler.codes'
 
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 source:      ./source/site
 destination: ./.publish
@@ -13,7 +13,7 @@ future:      true
 lsi:         false
 highlighter: true
 markdown:    kramdown
-permalink:   blog/:title
+permalink:   site/:title
 
 rdiscount:
   extensions: []
@@ -26,34 +26,25 @@ kramdown:
   enable_coderay: false
   input: GFM
 
-collections:
-  projects:
-    label: projects
-    output: true
-    relative_directory: portfolio/:slug
-    directory: portfolio/:slug
-
-  portfolio:
-    label: portfolio
-    output: true
-    relative_directory: portfolio/:slug
-    directory: portfolio/:slug
-
-  misc:
-    label: misc
-    output: true
-    relative_directory: portfolio/:slug
-    directory: portfolio/:slug
+exclude: [README.md, CHANGELOG.md, ]
 
 
-exclude: [
-  README.md,
-  CHANGELOG.md
-]
-
-# Custom vars
-current_version:  2.1.0
+# Site vars
+current_version:  3.0.0
 repo: https://github.com/underlost/tyler.codes
-site: https://tyler.codes
 author: Tyler Rilling
 title: Tyler.Codes
+description: 'Personal homepage of Tyler Rilling, UX designer and developer.'
+url: 'https://tyler.codes'
+
+twitter:
+  username: underlost
+  card: summary
+
+social:
+  name: Tyler Rilling
+  links:
+    - https://twitter.com/underlost
+    - https://github.com/underlost
+    - https://keybase.io/underlost
+    - https://instagram.com/underlost
