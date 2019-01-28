@@ -6,12 +6,12 @@ $yellow: #ffdd65 !default;
 $white: #fff;
 
 // Bootstrap overrides
-$primary: #141738 !default;
-$secondary: #64833F !default;
-$body-bg: #F8F8F2 !default;
-$body-color: #333 !default;
-$link-color: $body-color;
-$font-size-base:              0.9rem !default;
+$primary: #c6b13c !default;
+$secondary: #000 !default;
+$body-bg: #EBEBE5 !default;
+$body-color: #231f20 !default;
+$link-color: $secondary;
+$font-size-base: 1rem !default;
 $font-family-sans-serif: "europa", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-monospace: "ubuntu-mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $headings-font-family: "futura-pt", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

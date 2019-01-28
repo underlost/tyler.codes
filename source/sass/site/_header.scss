@@ -3,5 +3,17 @@
     text-transform: uppercase;
     font-size: 18px;
     letter-spacing: 1.5px;
+    &::after {
+      content: '';
+      display: block;
+      background: $primary;
+      height: 2px;
+      margin: 10px 0;
+      width: 25px;
+    }
+    a:hover{
+      color: $primary;
+      text-decoration: none;
+    }
   }
 }

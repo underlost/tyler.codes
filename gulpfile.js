@@ -24,7 +24,7 @@ ghPages = require('gulp-gh-pages');
 git = require('gulp-deploy-git');
 browserSync = require('browser-sync');
 argv = require('minimist')(process.argv.slice(2));
-$ = require('gulp-load-plugins')();
+awspublish = require("gulp-awspublish");
 
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -43,8 +43,8 @@ gulp.task('clean', function () {
 // Copy images
 gulp.task('copy-dist', function() {
   return gulp.src('dist/**/*.*').pipe(gulp.dest(
-    'source/site/dist',
-    '.publish/dist'
+    'source/site/assets',
+    '.publish/assets'
   ));
 });
 
@@ -62,6 +62,7 @@ gulp.task('imagemin', function() {
   return gulp.src('source/img/**/*.{jpg,png,gif,ico}')
 	.pipe(imagemin())
 	.pipe(gulp.dest('dist/img'))
+  .pipe(gulp.dest('source/site/assets/img'));
 });
 
 // Copy Components
@@ -196,6 +197,35 @@ gulp.task('deploy', function() {
       branches:   ['gh-pages'],
       message: 'Deployed with UnderTasker.'
   }));
+});
+
+gulp.task("publish", function() {
+  // create a new publisher using S3 options
+  // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
+  var publisher = awspublish.create(
+    {
+      region: "us-east",
+      params: {
+        Bucket: "tyler.codes"
+      }
+    },
+    {
+      cacheFileName: "your-cache-location"
+    }
+  );
+  // define custom headers
+  var headers = {
+    "Cache-Control": "max-age=315360000, no-transform, public"
+    // ...
+  };
+  return (
+    gulp
+    .src("./public/*")
+    .pipe(awspublish.gzip({ ext: ".gz" }))
+    .pipe(publisher.publish(headers))
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter())
+  );
 });
 
 // Default task will build the jekyll site, launch BrowserSync & watch files.

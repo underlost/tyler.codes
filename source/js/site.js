@@ -6,14 +6,10 @@
   $(document).ready(function() {
     //console.log('Ready');
     //RenderBackground.init();
-    $(document).activeNavigation(".sections-nav");
     animateClasses();
     fullscreener($('.' + $classes.FsrImage));
     $('.sections-nav').vLine();
     $('.content-section').removeClass("hidden").addClass("fadeIn");
-    //SectionFullpage();
-    jQuery(".parallax").paroller({ factor: '-0.1', type: 'foreground', direction: 'vertical' });
-    //jQuery(".parallax-menu").paroller({ factor: '1', type: 'foreground', direction: 'vertical' });
 
   });
   $(document).on('pjax:success', function () {
@@ -45,30 +41,6 @@
       _this.parent().addClass($classes.FsrHolder).attr('style', 'background-image: url(' + _src + ');');
     });
   }
-  function SectionFullpage() {
-    if($('#content').length){
-      $('#content').fullpage({
-        navigation: false,
-        bigSectionsDestination: 'top',
-        responsiveWidth: 992,
-      });
-    }
-  }
-  // Basic Slider
-  function kittySlide() {
-    var kitty = function () {
-      var slides = $('#cats li'), active = slides.filter('.active');
-      if (!active.length) {
-        active = slides.last();
-      }
-      active.addClass('active');
-      var next = active.next().length ? active.next() : slides.first();
-      next.css('opacity', 0).addClass('active').animate({ opacity: 1 }, function () {
-        active.removeClass('active last-active');
-      });
-    };
-    setInterval(kitty, 3000);
-  };
   /*
   * Add a CSS3 animation class to an element only when it's in the viewport.
   * The class is taken from the attribute data-animate.
@@ -82,8 +54,6 @@
       }
     });
   };
-
-
 })(jQuery);
 
 lightbox.option({
