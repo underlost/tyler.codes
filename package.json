@@ -10,7 +10,8 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "shipit": "gulp github",
-    "start": "jekyll serve --incremental --livereload"
+    "start": "jekyll serve --incremental --livereload",
+    "html": "bundle exec htmlproofer ./.publish --only-4xx --check-favicon --check-html"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.1",
