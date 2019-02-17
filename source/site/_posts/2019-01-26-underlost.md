@@ -4,7 +4,7 @@ title:  'underlost.net'
 alt: 'Personal site'
 website: 'https://underlost.net'
 icon: '<i class="fas fa-link"></i>'
-permalink: '/site/underlost/'
+permalink: '/underlost/'
 weight: 3
 ---
 

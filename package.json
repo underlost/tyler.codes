@@ -10,14 +10,13 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "shipit": "gulp github",
-    "start": "bundle exec jekyll serve --w"
+    "start": "jekyll serve --incremental --livereload"
   },
   "dependencies": {
-    "@webcomponents/custom-elements": "^1.1.2",
-    "@webcomponents/shadydom": "^1.0.14",
+    "@fortawesome/fontawesome-free": "^5.7.1",
     "bootstrap": "4.2.1",
     "browser-sync": "^2.24.4",
-    "components-font-awesome": "*",
+    "concurrent-transform": "^1.0.0",
     "del": ">=3.0.0",
     "gsap": "^2.0.1",
     "gulp": "~4.0.0",
@@ -38,13 +37,11 @@
     "gulp-uglify-es": "^1.0.4",
     "gulp-util": "^3.0.6",
     "gulp-watch": "~5.0.0",
-    "http-server": "^0.11.1",
     "jquery": "^3.2.1",
     "jshint": ">=2.9.5",
     "jshint-stylish": ">=2.0.1",
     "lightbox2": "^2.10.0",
     "pace-js": "^1.0.2",
-    "pjax": "^0.2.6",
     "popper.js": "^1.12.3"
   },
   "repository": {

@@ -1,3 +1,7 @@
+###4.0.0 (02/03/2019)
+* New, simplified layout.
+* Switched to newer Undertasker gulpfile.js for easier deployment.
+
 ###3.0.0 (05/28/2018)
 * New design
 * Updated Bootstrap

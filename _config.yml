@@ -13,7 +13,7 @@ future:      true
 lsi:         false
 highlighter: true
 markdown:    kramdown
-permalink:   site/:title
+permalink:   :title
 
 rdiscount:
   extensions: []

@@ -26,6 +26,9 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+.jekyll-metadata
+.awspublish-tyler.codes
+.awspublish-settings.json
 
 # Komodo
 *.komodoproject
