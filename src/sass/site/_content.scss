@@ -1,7 +1,6 @@
 body {
   //background-image: url('../img/bg.jpg');
   //background-position: center;
-
   &::after {
     content: '';
     display: block;
@@ -14,7 +13,7 @@ body {
   }
 }
 .site-wrapper {
-  max-width: 400px;
+  max-width: 450px;
   position: relative;
   z-index: 10;
 }

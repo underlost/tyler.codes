@@ -1,11 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Fade from 'react-reveal/Fade'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import LinkButton from '../components/link-button'
 
 class IndexPage extends React.Component {
   render() {
@@ -15,32 +15,30 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <SEO title={siteTitle} />
-        <section id="index" className={"site-section hidden"}>
-          <h2 className={"sr-only"}>Home</h2>
+        <SEO title="@underlost" />
+        <section id="index" className={'site-section hidden'}>
+          <h2 className={'sr-only'}>Home</h2>
 
-          <nav className={"site-nav"}>
-            <ul className={"list-nav list-unstyled"}>
-              <Fade big cascade>
-              {posts.map(({ node }) => {
-                const title = node.frontmatter.title || node.fields.slug
-                const website = node.frontmatter.website
-                const alt = node.frontmatter.alt
+          <nav className={'site-nav'}>
+            <ul className={'list-nav list-unstyled'}>
+                {posts.map(({ node }) => {
 
-                return (
-                  <li className={"d-block mb-2"}>
-                    <a className={"btn btn-primary btn-block text-left"} title={alt} href={website} rel="noopener noreferrer" target="_blank">{title}</a>
-                  </li>
-                )
-              })}
+                  const title = node.frontmatter.title || node.fields.slug
+                  const website = node.frontmatter.website
+                  const alt = node.frontmatter.alt
 
-              <li className={"d-block mb-2"}>
-                <Link className={"btn btn-primary btn-block text-left"} to="/about/">
-                  <span><FontAwesomeIcon icon={ faInfoCircle } fixedWidth /></span> About
-                </Link>
+                  return <LinkButton title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
+                })}
+
+                <li className={'d-block mb-2'}>
+                  <Link className={'btn btn-primary btn-block text-left'} to="/about/">
+                    <span>
+                      <FontAwesomeIcon icon={faInfoCircle} fixedWidth />
+                    </span>{' '}
+                    About
+                  </Link>
                 </li>
-              </Fade>
-              </ul>
+            </ul>
           </nav>
         </section>
       </Layout>
@@ -49,7 +47,6 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
-
 
 export const pageQuery = graphql`
   query {

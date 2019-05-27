@@ -1,8 +1,8 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -11,10 +11,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO
-          title={post.frontmatter.title}
-          description={post.frontmatter.alt || post.excerpt}
-        />
+        <SEO title={post.frontmatter.title} description={post.frontmatter.alt || post.excerpt} />
 
         <h1>{post.frontmatter.title}</h1>
 
@@ -23,15 +20,14 @@ class BlogPostTemplate extends React.Component {
         <hr />
 
         <ul
-          className={"list-unstyled"}
+          className={'list-unstyled'}
           style={{
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
             padding: 0,
-          }}
-        >
+          }}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">

@@ -5,7 +5,6 @@
  */
 
 gulp = require('gulp');
-rename = require('gulp-rename'); // to rename any file
 del = require('del');
 imagemin = require('gulp-imagemin');
 ghPages = require('gulp-gh-pages');
