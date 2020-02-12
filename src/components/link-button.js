@@ -12,16 +12,12 @@ class LinkButton extends React.Component {
   }
   render() {
     return (
-      <li className={'d-block mb-2'}>
-        <a
-          className={'btn btn-primary btn-block text-left'}
-          title={this.alt}
-          href={this.website}
-          rel="noopener noreferrer"
-          target="_blank">
+      <li className={`d-block mb-2`}>
+        <a className={`btn btn-primary btn-block text-left`} title={this.alt} href={this.website} rel="noopener noreferrer" target="_blank">
           <span>
             <FontAwesomeIcon icon={faLink} fixedWidth />
-          </span>{' '}
+          </span>
+          {` `}
           {this.title}
         </a>
       </li>

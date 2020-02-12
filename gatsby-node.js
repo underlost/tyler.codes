@@ -58,16 +58,16 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   let slug
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === `MarkdownRemark`) {
     const fileNode = getNode(node.parent)
     if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'permalink')
+      Object.prototype.hasOwnProperty.call(node, `frontmatter`) &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, `permalink`)
     ) {
       slug = `/${node.frontmatter.permalink}`
-      createNodeField({ node, name: 'slug', value: slug })
+      createNodeField({ node, name: `slug`, value: slug })
       // Adds the name of "gatsby-source-filesystem" as field (in this case "projects" or "pages")
-      createNodeField({ node, name: 'sourceInstanceName', value: fileNode.sourceInstanceName })
+      createNodeField({ node, name: `sourceInstanceName`, value: fileNode.sourceInstanceName })
     }
   }
 }
