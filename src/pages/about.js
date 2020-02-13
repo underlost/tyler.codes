@@ -10,7 +10,7 @@ const AboutPage = () => (
 
     <h1 className={`h3 mb-2`}>About this site</h1>
 
-    <p className={`lead`}>This site serves as a link list of various relevant sites and projects I'm involved with.</p>
+    <p className={`lead`}>This site serves as a link list of various relevant sites and projects I&apos;m involved with.</p>
 
     <ImageAbout />
 

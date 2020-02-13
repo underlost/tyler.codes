@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
-        posts: allMarkdownRemark(
+        posts: allMdx(
           sort: { fields: [frontmatter___weight], order: DESC }
           limit: 1000
         ) {

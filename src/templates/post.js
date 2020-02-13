@@ -12,7 +12,7 @@ const BlogPostTemplate = () => {
     <Layout location={this.props.location}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.alt || post.excerpt} />
 
-      <h1>{post.frontmatter.title}</h1>
+      <h1 className={`h3 mb-2`}>{post.frontmatter.title}</h1>
 
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
 

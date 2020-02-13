@@ -10,7 +10,7 @@ import LinkButton from '../components/link-button'
 const IndexPage = () => {
   const { data } = this.props
   //const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const links = data.allMarkdownRemark.edges
 
   return (
     <Layout>
@@ -20,7 +20,7 @@ const IndexPage = () => {
 
         <nav className={`site-nav`}>
           <ul className={`list-nav list-unstyled`}>
-            {posts.map(({ node }) => {
+            {links.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
               const website = node.frontmatter.website
               const alt = node.frontmatter.alt
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
         author
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___weight], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___weight], order: DESC }, filter: { fields: { sourceInstanceName: { eq: "links" } } }) {
       edges {
         node {
           excerpt
