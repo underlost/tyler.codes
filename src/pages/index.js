@@ -1,17 +1,15 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import LinkButton from '../components/link-button'
+import LinkButton from '../components/LinkButton'
 
-const IndexPage = () => {
-  const { data } = this.props
+const IndexPage = ({ data }) => {
   //const siteTitle = data.site.siteMetadata.title
-  const links = data.allMarkdownRemark.edges
-
+  const posts = data.allMdx.edges
   return (
     <Layout>
       <SEO title="Tyler Codes Sometimes." />
@@ -19,24 +17,13 @@ const IndexPage = () => {
         <h2 className={`sr-only`}>Home</h2>
 
         <nav className={`site-nav`}>
-          <ul className={`list-nav list-unstyled`}>
-            {links.map(({ node }) => {
+          <ul className={`list-nav list-unstyled mb-0`}>
+            {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
-              const website = node.frontmatter.website
+              const website = node.fields.slug
               const alt = node.frontmatter.alt
-
               return <LinkButton key={node.fields.slug} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
             })}
-
-            <li className={`d-block mb-2`}>
-              <Link className={`btn btn-primary btn-block text-left`} to="/about/">
-                <span>
-                  <FontAwesomeIcon icon={faInfoCircle} fixedWidth />
-                </span>
-                {` `}
-                About
-              </Link>
-            </li>
           </ul>
         </nav>
       </section>
@@ -46,15 +33,13 @@ const IndexPage = () => {
 
 export default IndexPage
 
+IndexPage.propTypes = {
+  data: PropTypes.node.isRequired,
+}
+
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    allMdx(sort: { fields: [frontmatter___weight], order: DESC }, filter: { fields: { sourceInstanceName: { eq: "links" } } }) {
+    allMdx(sort: { fields: [frontmatter___weight], order: DESC }, filter: { fields: { sourceInstanceName: {} } }) {
       edges {
         node {
           excerpt

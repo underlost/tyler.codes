@@ -1,68 +1,51 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-
+import PropTypes from 'prop-types'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import LinkButton from '../components/LinkButton'
+import Image from '../components/Image'
 
-const BlogPostTemplate = () => {
-  const post = this.props.data.markdownRemark
-  const { previous, next } = this.props.pageContext
+const BlogPostTemplate = ({ data }) => {
+  const post = data.mdx
+  const shortcodes = { Link, LinkButton, Image }
 
   return (
-    <Layout location={this.props.location}>
+    <Layout>
       <SEO title={post.frontmatter.title} description={post.frontmatter.alt || post.excerpt} />
 
-      <h1 className={`h3 mb-2`}>{post.frontmatter.title}</h1>
+      <h1 className={`h3 mb-2 text-lowercase`}>{post.frontmatter.title}</h1>
+      <p className={`lead`}>{post.frontmatter.description}</p>
 
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <MDXProvider components={shortcodes}>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </MDXProvider>
 
       <hr />
-
-      <ul
-        className={`list-unstyled`}
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}>
-        <li>
-          {previous && (
-            <Link to={previous.fields.slug} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={next.fields.slug} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
-      </ul>
     </Layout>
   )
 }
 
 export default BlogPostTemplate
 
+BlogPostTemplate.propTypes = {
+  data: PropTypes.node.isRequired,
+}
+
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
+  query($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
+      excerpt
+      body
+      fields {
+        slug
       }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
       frontmatter {
         title
-        alt
+        description
+        icon
       }
     }
   }

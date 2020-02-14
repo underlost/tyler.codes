@@ -1,65 +1,21 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const _ = require(`lodash`)
 
-
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const blogPost = path.resolve(`./src/templates/post.js`)
-  return graphql(
-    `
-      {
-        posts: allMdx(
-          sort: { fields: [frontmatter___weight], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-                permalink
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
+// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
+const wrapper = promise =>
+  promise.then(result => {
     if (result.errors) {
       throw result.errors
     }
-
-    // Create blog posts pages.
-    const posts = result.data.posts.edges
-
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
-
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      })
-    })
-
-    return null
+    return result
   })
-}
-
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   let slug
-  if (node.internal.type === `MarkdownRemark`) {
+  // Only use MDX nodes
+  if (node.internal.type === `Mdx`) {
     const fileNode = getNode(node.parent)
+    // If the frontmatter contains a "permalink", use it
     if (
       Object.prototype.hasOwnProperty.call(node, `frontmatter`) &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, `permalink`)
@@ -70,4 +26,71 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({ node, name: `sourceInstanceName`, value: fileNode.sourceInstanceName })
     }
   }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  // Our templates for projects and files inside /pages/*.mdx
+  const pageTemplate = require.resolve(`./src/templates/post.js`)
+
+  const result = await wrapper(
+    graphql(`
+      {
+        posts: allMdx(filter: { fields: { sourceInstanceName: { eq: "posts" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+        links: allMdx(filter: { fields: { sourceInstanceName: { eq: "links" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `)
+  )
+
+  result.data.posts.edges.forEach(edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: pageTemplate,
+      context: {
+        // Pass "slug" through context so we can reference it in our query like "$slug: String!"
+        slug: edge.node.fields.slug,
+      },
+    })
+  })
+  result.data.links.edges.forEach(edge => {
+    createPage({
+      path: edge.node.fields.slug,
+      component: pageTemplate,
+      context: {
+        slug: edge.node.fields.slug,
+      },
+    })
+  })
+}
+
+// Necessary changes to get gatsby-mdx and Cypress working
+exports.onCreateWebpackConfig = ({ stage, actions, loaders, getConfig }) => {
+  const config = getConfig()
+
+  config.module.rules = [
+    ...config.module.rules.filter(rule => String(rule.test) !== String(/\.jsx?$/)),
+    {
+      ...loaders.js(),
+      test: /\.jsx?$/,
+      exclude: modulePath => /node_modules/.test(modulePath) && !/node_modules\/gatsby-mdx/.test(modulePath),
+    },
+  ]
+  actions.replaceWebpackConfig(config)
 }

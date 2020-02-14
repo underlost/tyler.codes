@@ -1,17 +1,16 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import LinkButton from './link-button'
+import LinkButton from './LinkButton'
 
 const LinksList = () => {
   const data = useStaticQuery(query)
 
   return (
-    <ul className={`list-nav list-unstyled`}>
-      {data.map(({ node }) => {
+    <ul className={`list-nav list-unstyled mb-0`}>
+      {data.allMdx.edges.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         const website = node.frontmatter.website
         const alt = node.frontmatter.alt
-
         return <LinkButton key={node.fields.slug} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
       })}
     </ul>
