@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import InternalLinkButton from './InternalLink'
+import LinkButton from './LinkButton'
 
 const PostsList = () => {
   const data = useStaticQuery(query)
@@ -12,7 +12,7 @@ const PostsList = () => {
         const website = node.fields.slug
         const alt = node.frontmatter.alt
 
-        return <InternalLinkButton key={node.fields.slug} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
+        return <LinkButton key={node.fields.slug} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
       })}
     </ul>
   )

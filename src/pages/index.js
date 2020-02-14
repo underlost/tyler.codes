@@ -20,9 +20,11 @@ const IndexPage = ({ data }) => {
           <ul className={`list-nav list-unstyled mb-0`}>
             {posts.map(({ node }) => {
               const title = node.frontmatter.title || node.fields.slug
-              const website = node.fields.slug
+              const slug = node.fields.slug
+              const website = node.frontmatter.website
               const alt = node.frontmatter.alt
-              return <LinkButton key={node.fields.slug} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
+              const layout = node.frontmatter.layout
+              return <LinkButton key={node.fields.slug} slug={slug} layout={layout} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
             })}
           </ul>
         </nav>
@@ -47,6 +49,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            layout
             title
             alt
             website
