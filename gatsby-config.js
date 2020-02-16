@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://tyler.codes`,
     title: `Tyler.Codes`,
     description: `Tyler Rilling makes things on the internet.`,
     author: `Tyler Rilling`,
@@ -13,6 +14,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {

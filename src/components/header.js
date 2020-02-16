@@ -10,7 +10,7 @@ const Header = () => {
     <Bounce right>
       <header id="info" className={`site-header fadeTop mb-3 mt-3 mt-md-5`}>
         <h1 className={`h1 mb-4`}>
-          <Link to="/" rel="home">
+          <Link to="/" rel="home" className={`d-block`}>
             {siteTitle}
           </Link>
         </h1>

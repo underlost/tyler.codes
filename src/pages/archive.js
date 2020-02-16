@@ -15,7 +15,8 @@ const ArchivePage = () => (
       keywords={`Tyler Rilling`}
     />
     <section id="index" className={`site-section hidden`}>
-      <h2 className={`h3 mb-2 text-lowercase`}>Post Archive</h2>
+      <h1 className={`h3 mb-2 text-capitolize`}>Post Archive</h1>
+      <p className={`lead`}>Previous posts, articles and case studies.</p>
 
       <nav className={`site-nav`}>
         <PostsList />

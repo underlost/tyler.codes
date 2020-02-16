@@ -4,7 +4,9 @@
     font-size: 1.5rem;
     font-weight: 300;
     letter-spacing: 4px;
+    transition: all .3s ease;
     &::after {
+      transition: all .4s ease;
       content: '';
       display: block;
       background: $primary;
@@ -12,9 +14,13 @@
       margin: 10px 0;
       width: 25px;
     }
-    a:hover{
+    &:hover{
       color: $primary;
       text-decoration: none;
+      & * {text-decoration: none;}
+      &::after {
+        transform: translateX(400px);
+      }
     }
   }
 }

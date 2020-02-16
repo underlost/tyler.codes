@@ -11,15 +11,14 @@ const LinkedPage = () => (
   <Layout>
     <SEO
       title={`Link Archive`}
-      description={`Previous links to other profiles.`}
+      description={`Previous links to other online profiles.`}
       keywords={`Tyler Rilling`}
     />
     <section id="index" className={`site-section hidden`}>
-      <h2 className={`sr-only`}>Link List Archive</h2>
-
+      <h1 className={`h3 mb-2 text-capitolize`}>Link List Archive</h1>
+      <p className={`lead`}>Previous links to other online profiles.</p>
       <nav className={`site-nav`}>
         <LinksList />
-        <PostsList />
       </nav>
     </section>
   </Layout>

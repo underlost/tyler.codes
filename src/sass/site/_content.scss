@@ -14,11 +14,11 @@ body {
   }
 }
 .site-wrapper {
-  max-width: 450px;
+  max-width: 475px;
   position: relative;
   z-index: 10;
+  overflow: hidden;
 }
-
 
 .btn.btn-primary {
   font-family: $headings-font-family;
@@ -37,6 +37,19 @@ body {
     border-color: #e0245e;
     background-color: #e0245e;
     color: #fff;
+  }
+}
+
+.site-content {
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid $primary;
+
+    &:hover {
+      text-decoration: none;
+      border-color: $secondary;
+    }
   }
 }
 
