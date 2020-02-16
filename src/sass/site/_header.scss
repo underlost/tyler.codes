@@ -1,4 +1,5 @@
 .site-header {
+  opacity: 0;
   .h1 {
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -17,7 +18,10 @@
     &:hover{
       color: $primary;
       text-decoration: none;
-      & * {text-decoration: none;}
+      & * {
+        text-decoration: none;
+        color: $primary;
+      }
       &::after {
         transform: translateX(400px);
       }
