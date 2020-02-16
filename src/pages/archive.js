@@ -9,9 +9,13 @@ import PostsList from '../components/PostsList'
 
 const ArchivePage = () => (
   <Layout>
-    <SEO title="Tyler Codes Post Archive" />
+    <SEO
+      title={`Post Archive`}
+      description={`Previous posts, articles and case studies.`}
+      keywords={`Tyler Rilling`}
+    />
     <section id="index" className={`site-section hidden`}>
-      <h2 className={`h3 mb-2 text-lowercase`}>Archive</h2>
+      <h2 className={`h3 mb-2 text-lowercase`}>Post Archive</h2>
 
       <nav className={`site-nav`}>
         <PostsList />

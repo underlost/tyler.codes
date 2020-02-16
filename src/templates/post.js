@@ -14,9 +14,13 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.alt || post.excerpt} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.alt || post.excerpt}
+        keywords={post.frontmatter.keywords}
+      />
 
-      <h1 className={`h3 mb-2 text-lowercase`}>{post.frontmatter.title}</h1>
+      <h1 className={`h3 mb-2 text-capitolize`}>{post.frontmatter.title}</h1>
       <p className={`lead`}>{post.frontmatter.description}</p>
 
       <MDXProvider components={shortcodes}>

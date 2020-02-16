@@ -12,9 +12,13 @@ const IndexPage = ({ data }) => {
   const posts = data.allMdx.edges
   return (
     <Layout>
-      <SEO title="Tyler Codes Sometimes." />
+      <SEO
+        title={`Tyler Rilling Codes. Sometimes.`}
+        description={`Tyler Rilling is a web developer living in Seattle.`}
+        keywords={`Tyler Rilling, Seattle Web Developer, React Developer, Seattle Game Designer, Seattle Level Designer`}
+      />
       <section id="index" className={`site-section hidden`}>
-        <h2 className={`sr-only`}>Home</h2>
+        <h1 className={`sr-only`}>Tyler Rilling Codes. Sometimes.</h1>
 
         <nav className={`site-nav`}>
           <ul className={`list-nav list-unstyled mb-0`}>

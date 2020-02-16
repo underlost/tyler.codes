@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `tyler.codes`,
+    title: `Tyler.Codes`,
     description: `Tyler Rilling makes things on the internet.`,
     author: `Tyler Rilling`,
     social: {
@@ -72,13 +72,22 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `tyler.codes`,
-        short_name: `tylercodes`,
+        name: `Tyler.Codes`,
+        short_name: `Tyler.Codes`,
         start_url: `/`,
         background_color: `#e7e7e2`,
         theme_color: `#ff0052`,
         display: `minimal-ui`,
         icon: `static/images/logo_alt.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: ` UA-1247925-7`,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
       },
     },
   ],
