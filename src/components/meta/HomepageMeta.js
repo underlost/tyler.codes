@@ -14,7 +14,7 @@ const HomepageMeta = ({ settings, canonical, title, description, keywords, image
   shareImage = shareImage ? url.resolve(settings.siteUrl, shareImage) : null
   description = description || settings.description
   keywords = keywords || settings.keywords
-  title = `${title ||  settings.title}`
+  title = `${title ||  settings.title} // ${settings.title}`
 
   const jsonLd = {
     "@context": `https://schema.org/`,

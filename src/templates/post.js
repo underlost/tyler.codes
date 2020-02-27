@@ -20,6 +20,7 @@ const BlogPostTemplate = ({ data, location }) => {
     author: post.frontmatter.author,
     feature_image: post.frontmatter.feature_image,
     tags: post.frontmatter.tags,
+    keywords: post.frontmatter.keywords,
     primaryTag: post.frontmatter.primaryTag,
     og_title: post.frontmatter.og_title,
     og_description: post.frontmatter.og_description,
@@ -30,7 +31,7 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
     <Layout>
-      <MetaData data={postMeta} location={location} type="article" />
+      <MetaData data={postMeta} location={location} title={post.frontmatter.title} type={post.frontmatter.layout} />
 
       <h1 className={`h3 mb-2 text-capitolize`}>{post.frontmatter.title}</h1>
       <p className={`lead`}>{post.frontmatter.description}</p>
@@ -38,7 +39,6 @@ const BlogPostTemplate = ({ data, location }) => {
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{post.body}</MDXRenderer>
       </MDXProvider>
-
       <hr />
     </Layout>
   )
@@ -62,6 +62,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        keywords
+        layout
       }
     }
   }

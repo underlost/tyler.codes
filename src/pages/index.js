@@ -21,7 +21,6 @@ const IndexPage = ({ data, location }) => {
         isHome={true}
       />
       <Layout>
-
         <section id="index" className={`site-section hidden`}>
           <h1 className={`sr-only`}>Tyler Rilling Codes. Sometimes.</h1>
 

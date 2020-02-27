@@ -25,7 +25,7 @@ const MetaData = ({ data, settings, title, description, keywords, image, locatio
         type="WebSite"
       />
     )
-  } else if (type==`post` ) {
+  } else if (type==`article` ) {
     return (
       <ArticleMeta
         data={data}

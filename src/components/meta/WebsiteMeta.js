@@ -13,7 +13,7 @@ const WebsiteMeta = ({ data, settings, canonical, title, description, keywords, 
   let shareImage = image || data.feature_image || _.get(settings, `cover_image`, null)
   shareImage = shareImage ? url.resolve(settings.siteUrl, shareImage) : null
   description = description || data.meta_description || data.description || settings.description
-  title = `${title || data.meta_title || data.name || data.title} - ${settings.title}`
+  title = `${title || data.meta_title || data.name || data.title} // ${settings.title}`
 
   const jsonLd = {
     "@context": `https://schema.org/`,
