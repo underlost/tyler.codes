@@ -2,14 +2,26 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://tyler.codes`,
     title: `Tyler.Codes`,
+    shortTitle: `Tyler.Codes`,
+    logo: `images/logo.png`,
+    siteIcon: `images/logo.png`,
     description: `Tyler Rilling makes things on the internet.`,
-    author: `Tyler Rilling`,
+    keywords: [`Tyler Rilling`, `Seattle Web Developer`, `React Developer`, `Seattle Game Designer`, `Seattle Level Designer`],
+    author: {
+      name: `Tyler Rilling`,
+      image: ``,
+      sameAsArray: {},
+    },
     social: {
       twitter: `@underlost`,
       instagram: `underlost`,
       github: `underlost`,
       keybase: `underlost`,
     },
+    shareImageWidth: 1000, // Change to the width of your default share image
+    shareImageHeight: 523,
+    backgroundColor: `#e9e9e9`, // Used for Offline Manifest
+    themeColor: `#15171A`,
   },
   plugins: [
     `gatsby-plugin-offline`,

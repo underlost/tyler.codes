@@ -6,10 +6,10 @@ import Header from './header'
 import Footer from './footer'
 
 const Layout = ({ children }) => (
-  <div id="wrapper" className={`site-wrapper mx-auto px-2 px-md-4`}>
+  <div id="wrapper" className={`site-wrapper mx-auto px-5 px-md-4`}>
     <Header />
     <Bounce up>
-      <main id="content" className={`site-content pb-2`}>
+      <main id="content" className={`site-content pb-3`}>
         {children}
       </main>
       <Footer />

@@ -10,10 +10,12 @@ const LinkButton = props => {
     var LinkButtonRendered = (
       <li className={`d-block mb-2`}>
         <a className={`btn btn-primary btn-block text-left`} title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
-          <span className={`d-inline-block`} style={{
-            maxWidth: `20px`,
-            maxHeight:`20px`,
-          }}>
+          <span
+            className={`d-inline-block`}
+            style={{
+              maxWidth: `20px`,
+              maxHeight: `20px`,
+            }}>
             <FontAwesomeIcon icon={faLink} fixedWidth />
           </span>
           {` `}

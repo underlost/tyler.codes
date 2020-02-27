@@ -18,7 +18,9 @@ function SEO({ description, lang, meta, title, keywords }) {
           siteMetadata {
             title
             description
-            author
+            author {
+              name
+            }
             social {
               twitter
               github
