@@ -10,7 +10,7 @@ const WebsiteMeta = ({ data, settings, canonical, title, description, keywords, 
   settings = settings.site.siteMetadata
   const social = settings.social
   const publisherLogo = url.resolve(settings.siteUrl, (settings.logo || settings.siteIcon))
-  let shareImage = image || data.feature_image || _.get(settings, `cover_image`, null)
+  let shareImage = image || data.feature_image || settings.cover_image
   shareImage = shareImage ? url.resolve(settings.siteUrl, shareImage) : null
   description = description || data.meta_description || data.description || settings.description
   title = `${title || data.meta_title || data.name || data.title} // ${settings.title}`
@@ -81,6 +81,7 @@ WebsiteMeta.propTypes = {
   settings: PropTypes.shape({
     siteIcon: PropTypes.object,
     logo: PropTypes.string,
+    cover_image: PropTypes.string,
     siteUrl: PropTypes.string,
     description: PropTypes.string,
     title: PropTypes.string,

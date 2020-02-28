@@ -10,7 +10,7 @@ const HomepageMeta = ({ settings, canonical, title, description, keywords, image
   settings = settings.site.siteMetadata
   const social = settings.social
   const publisherLogo = url.resolve(settings.siteUrl, settings.siteIcon)
-  let shareImage = image ||  _.get(settings, `cover_image`, null)
+  let shareImage = image || settings.cover_image
   shareImage = shareImage ? url.resolve(settings.siteUrl, shareImage) : null
   description = description || settings.description
   keywords = keywords || settings.keywords
@@ -76,6 +76,7 @@ HomepageMeta.propTypes = {
     title: PropTypes.string,
     site: PropTypes.object.isRequired,
     siteIcon: PropTypes.object,
+    cover_image: PropTypes.string,
     keywords: PropTypes.array,
     shareImageWidth: PropTypes.integer,
     shareImageHeight: PropTypes.integer,

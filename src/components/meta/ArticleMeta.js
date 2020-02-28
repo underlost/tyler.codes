@@ -15,7 +15,7 @@ const ArticleMeta = ({ data, settings, canonical }) => {
   const publicTags = post.keywords
   //const publicTags = `"` + post.keywords.join(`","`) + `"`
   const primaryTag = post.primaryTag || publicTags[0] || ``
-  const shareImage = post.feature_image ? post.feature_image : _.get(settings, `cover_image`, null)
+  const shareImage = post.feature_image ? post.feature_image : settings.cover_image
   const publisherLogo = (settings.siteIcon) ? url.resolve(settings.siteUrl, (settings.siteIcon)) : null
 
   const jsonLd = {
@@ -121,6 +121,7 @@ ArticleMeta.propTypes = {
   settings: PropTypes.shape({
     siteUrl: PropTypes.string,
     siteIcon: PropTypes.object,
+    cover_image: PropTypes.string,
     description: PropTypes.string,
     author: PropTypes.object,
     title: PropTypes.string,

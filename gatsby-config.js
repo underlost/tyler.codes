@@ -4,6 +4,7 @@ module.exports = {
     title: `Tyler.Codes`,
     shortTitle: `Tyler.Codes`,
     logo: `images/logo.png`,
+    cover_image: `images/bg_03.jpg`,
     siteIcon: `images/logo.png`,
     description: `Tyler Rilling makes things on the internet.`,
     keywords: [`Tyler Rilling`, `Seattle Web Developer`, `React Developer`, `Seattle Game Designer`, `Seattle Level Designer`],
@@ -27,6 +28,9 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-zopfli`,
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {

@@ -1,24 +1,29 @@
 import React from 'react'
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import PropTypes from 'prop-types'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
-import LinksList from '../components/LinksList'
 import PostsList from '../components/PostsList'
+import MetaData from '../components/meta/MetaData'
 
-const ArchivePage = () => (
-  <Layout>
-    <SEO title={`Post Archive`} description={`Previous posts, articles and case studies.`} keywords={`Tyler Rilling`} />
-    <section id="index" className={`site-section hidden`}>
-      <h1 className={`h3 mb-2 text-capitolize`}>Post Archive</h1>
-      <p className={`lead`}>Previous posts, articles and case studies.</p>
+const ArchivePage = ({ location }) => (
+  <>
+    <MetaData location={location} type="website" title={`Post Archibe`} keywords={[`Tyler Rilling`]} description={`Previous posts, articles and case studies.`} />
+    <Layout>
+      <section id="index" className={`site-section hidden`}>
+        <h1 className={`h3 mb-2 text-capitolize`}>Post Archive</h1>
+        <p className={`lead`}>Previous posts, articles and case studies.</p>
 
-      <nav className={`site-nav`}>
-        <PostsList />
-      </nav>
-    </section>
-  </Layout>
+        <nav className={`site-nav`}>
+          <PostsList />
+        </nav>
+      </section>
+    </Layout>
+  </>
 )
+
+ArchivePage.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+}
 
 export default ArchivePage
