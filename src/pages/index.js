@@ -5,6 +5,7 @@ import MetaData from '../components/meta/MetaData'
 
 import Layout from '../components/layout'
 import LinkButton from '../components/LinkButton'
+import Featured from '../components/featured'
 
 const IndexPage = ({ data, location }) => {
   //const siteTitle = data.site.siteMetadata.title
@@ -23,6 +24,8 @@ const IndexPage = ({ data, location }) => {
       <Layout>
         <section id="index" className={`site-section hidden`}>
           <h1 className={`sr-only`}>Tyler Rilling Codes. Sometimes.</h1>
+
+          <Featured />
 
           <nav className={`site-nav`}>
             <ul className={`list-nav list-unstyled mb-0`}>

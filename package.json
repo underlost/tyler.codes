@@ -33,6 +33,7 @@
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.17",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-reveal": "^1.2.2"

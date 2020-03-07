@@ -52,6 +52,21 @@ body {
       border-color: $secondary;
     }
   }
+  .carousel-indicators {
+    justify-content: left;
+    bottom: 10px;
+  }
+  .carousel-item {
+    .image-wrapper {
+      height: 250px;
+    }
+  }
+  .carousel-caption {
+    text-align: left;
+    font-weight: normal;
+    padding-bottom: 30px;
+    bottom: 30px;
+  }
 }
 
 .list-footer {
