@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
 import Carousel from 'react-bootstrap/Carousel'
 import Image from './Image'
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Featured = () => {
   const data = useStaticQuery(query)
@@ -17,17 +19,17 @@ const Featured = () => {
   return (
     <div className={`mb-1`}>
       <Carousel activeIndex={index} direction={direction} onSelect={handleSelect} controls={false} interval={`4000`}>
-        {data.allMdx.edges.map(({ node }) => {
+        {data.allMdx.edges.map(({ node, i }) => {
           const title = node.frontmatter.title
           const description = node.frontmatter.description
           const website = node.frontmatter.permalink
           return (
-            <Carousel.Item>
+            <Carousel.Item key={i}>
               <Link to={website}>
-                <Image filename={`bg_02.jpg`} />
+                <Image filename={node.frontmatter.cover} />
                 <Carousel.Caption>
                   <h3>{title}</h3>
-                  <span>{description}</span> Learn more 
+                  <span>{description}</span> Read more <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="sm" />
                 </Carousel.Caption>
               </Link>
             </Carousel.Item>
@@ -58,6 +60,7 @@ const query = graphql`
             keywords
             permalink
             sticky
+            cover
           }
         }
       }

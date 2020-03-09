@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import { faLink, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faInfoCircle, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const LinkButton = props => {
@@ -16,7 +16,7 @@ const LinkButton = props => {
               maxWidth: `20px`,
               maxHeight: `20px`,
             }}>
-            <FontAwesomeIcon icon={faLink} fixedWidth />
+            <FontAwesomeIcon icon={faExternalLinkAlt} fixedWidth />
           </span>
           {` `}
           {props.title}

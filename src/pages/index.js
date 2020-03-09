@@ -35,7 +35,7 @@ const IndexPage = ({ data, location }) => {
                 const website = node.frontmatter.website
                 const alt = node.frontmatter.alt
                 const layout = node.frontmatter.layout
-                return <LinkButton key={node.fields.slug} slug={slug} layout={layout} title={title} website={website} alt={alt} icon={node.frontmatter.icon} />
+                return <LinkButton key={node.fields.slug} slug={slug} layout={layout} title={title} website={website} alt={alt} />
               })}
             </ul>
           </nav>

@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={`site-footer`}>
       <small className={`copyright`}>
-        Copyright &copy; 2002–2020. <br />
+        Copyright &copy; 2014–2020. <br />
         Last <a href="https://github.com/underlost/tyler.codes/">updated {data.site.buildTime}</a>.
       </small>
     </footer>
