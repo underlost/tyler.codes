@@ -9,16 +9,7 @@ const LinkButton = props => {
   if (buttonType == `link`) {
     var LinkButtonRendered = (
       <li className={`d-block mb-2`}>
-        <a className={`btn btn-primary btn-block text-left`} title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
-          <span
-            className={`d-inline-block`}
-            style={{
-              maxWidth: `20px`,
-              maxHeight: `20px`,
-            }}>
-            <FontAwesomeIcon icon={faExternalLinkAlt} fixedWidth />
-          </span>
-          {` `}
+        <a className={`btn btn-primary btn-block text-center`} title={props.alt} href={props.website} rel="noopener noreferrer" target="_blank">
           {props.title}
         </a>
       </li>
@@ -26,11 +17,7 @@ const LinkButton = props => {
   } else {
     var LinkButtonRendered = (
       <li className={`d-block mb-2`}>
-        <Link className={`btn btn-primary btn-block text-left`} title={props.alt} to={props.slug}>
-          <span>
-            <FontAwesomeIcon icon={faLink} fixedWidth />
-          </span>
-          {` `}
+        <Link className={`btn btn-primary btn-block text-center`} title={props.alt} to={props.slug}>
           {props.title}
         </Link>
       </li>

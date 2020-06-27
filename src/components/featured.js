@@ -11,9 +11,9 @@ const Featured = () => {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState(null)
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex)
-    setDirection(e.direction)
+    setDirection(direction)
   }
 
   return (
@@ -29,7 +29,7 @@ const Featured = () => {
                 <Image filename={node.frontmatter.cover} />
                 <Carousel.Caption>
                   <h3>{title}</h3>
-                  <span>{description}</span> Read more <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="sm" />
+                  <span>{description}</span> <FontAwesomeIcon icon={faAngleDoubleRight} fixedWidth size="sm" />
                 </Carousel.Caption>
               </Link>
             </Carousel.Item>
