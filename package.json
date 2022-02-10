@@ -45,7 +45,7 @@
     "@mdx-js/react": "^1.5.5",
     "@types/react": "^16.0.0",
     "jquery": "*",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.14.7",
     "prettier": "^1.17.0",
     "prismjs": "^1.16.0",
